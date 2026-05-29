@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'self'; frame-ancestors 'none'">
+<meta name="referrer" content="no-referrer" />
+
+<title>About NetPayHub — Privacy-First Calculators</title>
+<meta name="description" content="About NetPayHub: privacy-first salary and tax calculators for Ireland. Every calculation runs in your browser, built on official Revenue Budget 2026 figures." />
+<link rel="canonical" href="https://netpayhub.com/about/" />
+
+<!-- Social / Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NetPayHub">
+<meta property="og:url" content="https://netpayhub.com/about/">
+<meta property="og:title" content="About NetPayHub — Privacy-First Calculators">
+<meta property="og:description" content="About NetPayHub: privacy-first salary and tax calculators for Ireland, built on official Revenue Budget 2026 figures.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="About NetPayHub — Privacy-First Calculators">
+<meta name="twitter:description" content="Privacy-first salary and tax calculators for Ireland, built on official Revenue Budget 2026 figures.">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"Organization","@id":"https://netpayhub.com/#org","name":"NetPayHub","url":"https://netpayhub.com/",
+     "description":"Privacy-first salary and tax calculators. Every calculation runs in the browser; your data never leaves your device.",
+     "knowsAbout":["Irish income tax","PAYE","USC","PRSI","take-home pay","day rate","self-employed tax"]},
+    {"@type":"AboutPage","@id":"https://netpayhub.com/about/#page",
+     "url":"https://netpayhub.com/about/",
+     "name":"About NetPayHub",
+     "isPartOf":{"@id":"https://netpayhub.com/#site"},
+     "description":"About NetPayHub, a privacy-first website of localized salary and tax calculators."},
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://netpayhub.com/"},
+      {"@type":"ListItem","position":2,"name":"About","item":"https://netpayhub.com/about/"}
+    ]}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{--bg:#FAF6EE;--ink:#10241C;--muted:#5C6B63;--card:#FFFFFF;--line:#E6DECF;--brand:#0E5C43;--brand-2:#0A3D2C;--accent:#F2A900;--accent-soft:#FFF3D6;--lock:#1466C9;--lock-soft:#E7F0FE;--shadow:0 1px 2px rgba(16,36,28,.06),0 12px 30px -12px rgba(16,36,28,.22);--radius:18px}
+@media (prefers-color-scheme:dark){:root{--bg:#0B1410;--ink:#EAF2EC;--muted:#9BB0A6;--card:#11201A;--line:#23362D;--brand:#36D399;--accent:#F2A900;--accent-soft:#2A2410;--lock:#6FB1FF;--lock-soft:#10243F;--shadow:0 1px 2px rgba(0,0,0,.4),0 18px 40px -16px rgba(0,0,0,.6)}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hanken Grotesk",system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;background-image:radial-gradient(120% 70% at 100% 0%,color-mix(in srgb,var(--brand) 9%,transparent),transparent 60%)}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px}
+a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
+header{padding:20px 0;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:"Bricolage Grotesque";font-weight:800;font-size:1.3rem;letter-spacing:-.02em;color:var(--ink);display:flex;gap:8px;align-items:center}
+.logo a{color:var(--ink)}
+.logo .dot{width:11px;height:11px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+nav a{color:var(--muted);font-weight:500;margin-left:18px;font-size:.92rem}
+.crumbs{font-size:.86rem;color:var(--muted);padding:6px 0 0}
+.crumbs span{margin:0 8px;opacity:.6}
+.hero{padding:24px 0 6px}
+.eyebrow{display:inline-block;font-weight:600;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);background:color-mix(in srgb,var(--brand) 12%,transparent);padding:5px 12px;border-radius:999px}
+h1{font-family:"Bricolage Grotesque";font-weight:800;font-size:clamp(2rem,5.5vw,3.2rem);line-height:1.05;letter-spacing:-.03em;margin:.25em 0 .35em}
+.answer{margin:18px 0 6px;background:var(--accent-soft);border-left:4px solid var(--accent);border-radius:10px;padding:16px 18px;font-size:1.06rem;font-weight:500;max-width:70ch}
+.answer b{font-weight:700}
+h2{font-family:"Bricolage Grotesque";font-weight:700;font-size:1.5rem;letter-spacing:-.02em;margin:2em 0 .6em}
+p{color:var(--ink);max-width:68ch}
+.muted{color:var(--muted)}
+ul{max-width:68ch;color:var(--ink)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:6px}
+.cards div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.cards .ic{font-size:1.4rem}.cards b{display:block;font-family:"Bricolage Grotesque";margin:8px 0 4px}
+.cards small{color:var(--muted)}
+.related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:6px}
+.related a{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;font-weight:600;color:var(--ink)}
+.related a:hover{border-color:var(--brand);text-decoration:none}
+.related a span{display:block;color:var(--muted);font-weight:500;font-size:.85rem;margin-top:3px}
+.source{font-size:.9rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;margin-top:30px}
+footer{padding:34px 0 50px;color:var(--muted);font-size:.88rem;text-align:center;border-top:1px solid var(--line);margin-top:40px}
+footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="logo"><span class="dot"></span> <a href="/">NetPayHub</a></div>
+    <nav>
+      <a href="/ireland/">Ireland</a>
+      <a href="/ireland/freelancers/">Freelancers</a>
+      <a href="/ireland/contractors/">Contractors</a>
+    </nav>
+  </header>
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a><span>›</span>About
+  </nav>
+
+  <section class="hero">
+    <span class="eyebrow">About NetPayHub</span>
+    <h1>About NetPayHub</h1>
+    <div class="answer">
+      <b>NetPayHub builds privacy-first salary and tax calculators.</b> Every calculation runs in
+      your browser using official Revenue figures, so you get accurate estimates without your
+      income data ever leaving your device.
+    </div>
+  </section>
+
+  <h2>Why we built it</h2>
+  <p>Most online salary tools quietly send what you type to their servers, ad networks or analytics
+    partners. We think working out your own pay shouldn't cost you your privacy. NetPayHub does the
+    maths locally on your device and is technically blocked from sending your numbers anywhere.</p>
+
+  <h2>What makes us different</h2>
+  <div class="cards">
+    <div><div class="ic">🔒</div><b>Private by design</b><small>Calculations run in your browser. Nothing is sent or stored.</small></div>
+    <div><div class="ic">🎯</div><b>Accurate</b><small>Built on Revenue.ie and Budget 2026 figures.</small></div>
+    <div><div class="ic">⚡</div><b>Free &amp; fast</b><small>No sign-up, no ads reading your inputs, no clutter.</small></div>
+  </div>
+
+  <h2>How we keep figures accurate</h2>
+  <p>We use the official 2026 tax bands and credits published by Revenue and in Budget 2026. The
+    exact figures behind every calculator are documented openly:</p>
+  <ul>
+    <li>See the numbers we use on the <a href="/methodology/">methodology page</a>.</li>
+    <li>See how we review and update content in our <a href="/editorial-policy/">editorial policy</a>.</li>
+    <li>See how your data is protected on the <a href="/how-we-protect-your-data/">privacy page</a>.</li>
+  </ul>
+
+  <h2>Try the calculators</h2>
+  <div class="related">
+    <a href="/ireland/">All Ireland calculators <span>Browse the hub</span></a>
+    <a href="/ireland/net-salary-calculator-2026/">Net salary calculator <span>Take-home after PAYE, USC &amp; PRSI</span></a>
+    <a href="/ireland/day-rate-to-salary-calculator/">Day rate → salary <span>For contractors</span></a>
+  </div>
+
+  <p class="source">NetPayHub provides estimates for planning only — not tax advice. Tax figures
+    sourced from <a href="https://www.revenue.ie" rel="nofollow">revenue.ie</a> and Budget 2026
+    (gov.ie). Last updated: 29 May 2026.</p>
+
+  <footer>
+    <nav aria-label="Footer links" style="display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;margin-bottom:10px">
+      <a href="/">Home</a>
+      <a href="/ireland/">Ireland</a>
+      <a href="/ireland/freelancers/">Freelancers</a>
+      <a href="/ireland/contractors/">Contractors</a>
+      <a href="/about/">About</a>
+      <a href="/methodology/">Methodology</a>
+      <a href="/editorial-policy/">Editorial Policy</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/disclaimer/">Disclaimer</a>
+      <a href="/how-we-protect-your-data/">How we protect your data</a>
+    </nav>
+    © <span id="yr"></span> NetPayHub · Estimates only — not financial advice.
+  </footer>
+</div>
+<script src="/assets/yr.js"></script>
+</body>
+</html>

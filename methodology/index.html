@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'self'; frame-ancestors 'none'">
+<meta name="referrer" content="no-referrer" />
+
+<title>Methodology — How We Calculate Irish Tax 2026</title>
+<meta name="description" content="Our methodology: the exact 2026 Irish tax figures behind NetPayHub's calculators — PAYE bands, tax credits, USC rates and PRSI, sourced from Revenue and Budget 2026." />
+<link rel="canonical" href="https://netpayhub.com/methodology/" />
+
+<!-- Social / Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NetPayHub">
+<meta property="og:url" content="https://netpayhub.com/methodology/">
+<meta property="og:title" content="Methodology — How We Calculate Irish Tax 2026">
+<meta property="og:description" content="The exact 2026 Irish tax figures behind NetPayHub's calculators: PAYE bands, credits, USC and PRSI, sourced from Revenue and Budget 2026.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Methodology — How We Calculate Irish Tax 2026">
+<meta name="twitter:description" content="The exact 2026 Irish tax figures behind our calculators: PAYE bands, credits, USC and PRSI.">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"Organization","@id":"https://netpayhub.com/#org","name":"NetPayHub","url":"https://netpayhub.com/",
+     "description":"Privacy-first salary and tax calculators. Every calculation runs in the browser; your data never leaves your device."},
+    {"@type":"WebPage","@id":"https://netpayhub.com/methodology/#page",
+     "url":"https://netpayhub.com/methodology/",
+     "name":"Calculation Methodology",
+     "isPartOf":{"@id":"https://netpayhub.com/#site"},
+     "description":"The 2026 Irish tax figures and formulas used by NetPayHub's salary and tax calculators."},
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://netpayhub.com/"},
+      {"@type":"ListItem","position":2,"name":"Methodology","item":"https://netpayhub.com/methodology/"}
+    ]},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"What tax year do the calculators use?",
+       "acceptedAnswer":{"@type":"Answer","text":"The 2026 tax year, based on the rates and bands announced in Budget 2026 and published by Revenue."}},
+      {"@type":"Question","name":"Where do the figures come from?",
+       "acceptedAnswer":{"@type":"Answer","text":"From Revenue (revenue.ie) and Budget 2026 (gov.ie). The calculators are estimates for planning only and are not tax advice."}}
+    ]}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{--bg:#FAF6EE;--ink:#10241C;--muted:#5C6B63;--card:#FFFFFF;--line:#E6DECF;--brand:#0E5C43;--brand-2:#0A3D2C;--accent:#F2A900;--accent-soft:#FFF3D6;--lock:#1466C9;--lock-soft:#E7F0FE;--shadow:0 1px 2px rgba(16,36,28,.06),0 12px 30px -12px rgba(16,36,28,.22);--radius:18px}
+@media (prefers-color-scheme:dark){:root{--bg:#0B1410;--ink:#EAF2EC;--muted:#9BB0A6;--card:#11201A;--line:#23362D;--brand:#36D399;--accent:#F2A900;--accent-soft:#2A2410;--lock:#6FB1FF;--lock-soft:#10243F;--shadow:0 1px 2px rgba(0,0,0,.4),0 18px 40px -16px rgba(0,0,0,.6)}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hanken Grotesk",system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;background-image:radial-gradient(120% 70% at 100% 0%,color-mix(in srgb,var(--brand) 9%,transparent),transparent 60%)}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px}
+a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
+header{padding:20px 0;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:"Bricolage Grotesque";font-weight:800;font-size:1.3rem;letter-spacing:-.02em;color:var(--ink);display:flex;gap:8px;align-items:center}
+.logo a{color:var(--ink)}
+.logo .dot{width:11px;height:11px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+nav a{color:var(--muted);font-weight:500;margin-left:18px;font-size:.92rem}
+.crumbs{font-size:.86rem;color:var(--muted);padding:6px 0 0}
+.crumbs span{margin:0 8px;opacity:.6}
+.hero{padding:24px 0 6px}
+.eyebrow{display:inline-block;font-weight:600;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);background:color-mix(in srgb,var(--brand) 12%,transparent);padding:5px 12px;border-radius:999px}
+h1{font-family:"Bricolage Grotesque";font-weight:800;font-size:clamp(2rem,5.5vw,3.2rem);line-height:1.05;letter-spacing:-.03em;margin:.25em 0 .35em}
+.answer{margin:18px 0 6px;background:var(--accent-soft);border-left:4px solid var(--accent);border-radius:10px;padding:16px 18px;font-size:1.06rem;font-weight:500;max-width:70ch}
+.answer b{font-weight:700}
+h2{font-family:"Bricolage Grotesque";font-weight:700;font-size:1.5rem;letter-spacing:-.02em;margin:2em 0 .6em}
+p{color:var(--ink);max-width:68ch}
+.muted{color:var(--muted)}
+table{border-collapse:collapse;width:100%;max-width:640px;margin:10px 0;font-size:.96rem}
+caption{caption-side:top;text-align:left;font-weight:600;color:var(--muted);padding-bottom:6px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line)}
+th{font-family:"Bricolage Grotesque";font-weight:700}
+.formula{display:inline-block;background:var(--card);border:1px dashed var(--line);border-radius:10px;padding:10px 14px;font-weight:600;margin:8px 0}
+.related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:6px}
+.related a{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;font-weight:600;color:var(--ink)}
+.related a:hover{border-color:var(--brand);text-decoration:none}
+.related a span{display:block;color:var(--muted);font-weight:500;font-size:.85rem;margin-top:3px}
+.source{font-size:.9rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;margin-top:30px}
+footer{padding:34px 0 50px;color:var(--muted);font-size:.88rem;text-align:center;border-top:1px solid var(--line);margin-top:40px}
+footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="logo"><span class="dot"></span> <a href="/">NetPayHub</a></div>
+    <nav>
+      <a href="/ireland/">Ireland</a>
+      <a href="/ireland/freelancers/">Freelancers</a>
+      <a href="/ireland/contractors/">Contractors</a>
+    </nav>
+  </header>
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a><span>›</span>Methodology
+  </nav>
+
+  <section class="hero">
+    <span class="eyebrow">Transparency · Ireland 2026</span>
+    <h1>Our calculation methodology</h1>
+    <div class="answer">
+      <b>NetPayHub's calculators use the official 2026 Irish tax figures</b> from Revenue and Budget
+      2026 — PAYE bands, tax credits, USC rates and PRSI. Below are the exact numbers each tool
+      applies, so you can check our work.
+    </div>
+  </section>
+
+  <h2>Income tax (PAYE) — 2026 standard rate bands</h2>
+  <p>Income up to the standard-rate cut-off is taxed at 20%; income above it at 40%. Your tax
+    credits are then subtracted from the tax due.</p>
+  <table>
+    <caption>Standard rate cut-off (20% band)</caption>
+    <tr><th>Situation</th><th>Taxed at 20% up to</th><th>40% on income above</th></tr>
+    <tr><td>Single person</td><td>€44,000</td><td>€44,000</td></tr>
+    <tr><td>Married/civil partners, one income</td><td>€53,000</td><td>€53,000</td></tr>
+  </table>
+  <table>
+    <caption>Tax credits applied</caption>
+    <tr><th>Credit</th><th>Amount</th></tr>
+    <tr><td>Personal tax credit</td><td>€2,000</td></tr>
+    <tr><td>Employee (PAYE) tax credit</td><td>€2,000</td></tr>
+  </table>
+
+  <h2>Universal Social Charge (USC) — 2026 bands</h2>
+  <p>USC is charged on gross income across the following bands. Incomes at or below €13,000 in the
+    year are exempt from USC.</p>
+  <table>
+    <tr><th>Band of income</th><th>USC rate</th></tr>
+    <tr><td>First €12,012</td><td>0.5%</td></tr>
+    <tr><td>€12,012 – €28,700</td><td>2%</td></tr>
+    <tr><td>€28,700 – €70,044</td><td>3%</td></tr>
+    <tr><td>Above €70,044</td><td>8%</td></tr>
+  </table>
+
+  <h2>PRSI — 2026</h2>
+  <p>Pay Related Social Insurance is charged at <b>4.2%</b> of gross pay, rising to <b>4.35% from
+    1 October 2026</b>. A weekly income threshold (around €352 per week) means very low earnings are
+    not charged PRSI.</p>
+
+  <h2>How the net salary is built up</h2>
+  <p>For an employee, take-home pay is calculated as:</p>
+  <div class="formula">Take-home = Gross − Income tax − USC − PRSI</div>
+  <p>Income tax is <code>(income at 20%) + (income at 40%) − tax credits</code>, where any pension
+    contribution you enter reduces the income-tax base. USC and PRSI are applied to gross pay using
+    the bands above.</p>
+
+  <h2>Day rate to salary</h2>
+  <p>The day rate tool converts a daily rate into a gross figure before tax:</p>
+  <div class="formula">Annual = Day rate × Days per week × Working weeks</div>
+  <p>We default to 46 working weeks, because contractors are typically not paid for holidays and
+    gaps between contracts. The result is gross — run it through the net calculator for take-home.</p>
+
+  <h2>Limitations</h2>
+  <p>These are estimates for planning only and do not cover every personal circumstance (additional
+    credits, reliefs, age-related USC rules, self-employed structures, etc.). For your exact
+    position, check <a href="https://www.revenue.ie" rel="nofollow">revenue.ie</a> or speak to a
+    qualified adviser. See also our <a href="/editorial-policy/">editorial policy</a>.</p>
+
+  <h2>Use the calculators</h2>
+  <div class="related">
+    <a href="/ireland/net-salary-calculator-2026/">Net salary calculator <span>Take-home after PAYE, USC &amp; PRSI</span></a>
+    <a href="/ireland/day-rate-to-salary-calculator/">Day rate → salary <span>For contractors</span></a>
+    <a href="/ireland/">All Ireland calculators <span>Browse the hub</span></a>
+  </div>
+
+  <p class="source">Sources: <a href="https://www.revenue.ie" rel="nofollow">revenue.ie</a>,
+    Budget 2026 (gov.ie). Figures reflect the 2026 tax year. Estimates for planning only — not tax
+    advice. Last updated: 29 May 2026.</p>
+
+  <footer>
+    <nav aria-label="Footer links" style="display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;margin-bottom:10px">
+      <a href="/">Home</a>
+      <a href="/ireland/">Ireland</a>
+      <a href="/ireland/freelancers/">Freelancers</a>
+      <a href="/ireland/contractors/">Contractors</a>
+      <a href="/about/">About</a>
+      <a href="/methodology/">Methodology</a>
+      <a href="/editorial-policy/">Editorial Policy</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/disclaimer/">Disclaimer</a>
+      <a href="/how-we-protect-your-data/">How we protect your data</a>
+    </nav>
+    © <span id="yr"></span> NetPayHub · Estimates only — not financial advice.
+  </footer>
+</div>
+<script src="/assets/yr.js"></script>
+</body>
+</html>
