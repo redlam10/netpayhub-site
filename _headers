@@ -1,6 +1,6 @@
 # _headers — Netlify / Cloudflare Pages
 # Production security headers. Put this file at the site root.
-# NOTE: the hardened CSP below uses script-src 'self' 'unsafe-inline'; (NO 'unsafe-inline').
+# NOTE: the hardened CSP below uses script-src 'self' (NO 'unsafe-inline').
 # For that to work, move the inline <script> from each page into an external
 # /app.js file. Until you do, temporarily add 'unsafe-inline' to script-src.
 
