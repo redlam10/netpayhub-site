@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'self'; frame-ancestors 'none'">
+<meta name="referrer" content="no-referrer" />
+
+<title>How We Protect Your Data — Privacy-First Salary Calculators | NetPayHub</title>
+<meta name="description" content="How NetPayHub keeps your salary private: every calculation runs in your browser, the page is blocked from sending data out, nothing is stored. No accounts, no tracking, no third-party scripts." />
+<link rel="canonical" href="https://netpayhub.com/how-we-protect-your-data/" />
+
+<!-- Organization + Article + FAQPage + Breadcrumb -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Organization",
+      "@id":"https://netpayhub.com/#org",
+      "name":"NetPayHub",
+      "url":"https://netpayhub.com/",
+      "description":"Privacy-first salary and tax calculators for Ireland and beyond. Calculations run entirely in the browser.",
+      "knowsAbout":["Irish income tax","PAYE","USC","PRSI","Budget 2026","take-home pay","self-employed tax"]
+    },
+    {
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://netpayhub.com/"},
+        {"@type":"ListItem","position":2,"name":"How We Protect Your Data","item":"https://netpayhub.com/how-we-protect-your-data/"}
+      ]
+    },
+    {
+      "@type":"Article",
+      "headline":"How We Protect Your Data",
+      "datePublished":"2026-01-15","dateModified":"2026-05-29",
+      "publisher":{"@id":"https://netpayhub.com/#org"},
+      "about":["data privacy","client-side computation","Content-Security-Policy"]
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"Does NetPayHub store my salary?",
+         "acceptedAnswer":{"@type":"Answer","text":"No. Nothing you type is stored. There are no accounts and no database of user inputs. When you close or refresh the page, your figures are gone."}},
+        {"@type":"Question","name":"Can my salary be sent to a server?",
+         "acceptedAnswer":{"@type":"Answer","text":"No. Every page sets a Content-Security-Policy with connect-src 'none', which blocks the page from opening any network connection. Calculations happen locally in your browser, so your salary cannot be transmitted."}},
+        {"@type":"Question","name":"Do you use tracking or ads that read my inputs?",
+         "acceptedAnswer":{"@type":"Answer","text":"No third-party scripts run on the calculators, so nothing can watch what you type. The site is served over HTTPS with strict security headers."}}
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{--bg:#FAF6EE;--ink:#10241C;--muted:#5C6B63;--card:#FFFFFF;--line:#E6DECF;--brand:#0E5C43;--brand-2:#0A3D2C;--accent:#F2A900;--accent-soft:#FFF3D6;--lock:#1466C9;--lock-soft:#E7F0FE;--shadow:0 1px 2px rgba(16,36,28,.06),0 12px 30px -12px rgba(16,36,28,.22);--radius:18px}
+@media (prefers-color-scheme:dark){:root{--bg:#0B1410;--ink:#EAF2EC;--muted:#9BB0A6;--card:#11201A;--line:#23362D;--brand:#36D399;--accent:#F2A900;--accent-soft:#2A2410;--lock:#6FB1FF;--lock-soft:#10243F;--shadow:0 1px 2px rgba(0,0,0,.4),0 18px 40px -16px rgba(0,0,0,.6)}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hanken Grotesk",system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;background-image:radial-gradient(120% 70% at 100% 0%,color-mix(in srgb,var(--lock) 8%,transparent),transparent 60%)}
+.wrap{max-width:780px;margin:0 auto;padding:0 20px}
+a{color:var(--brand)}a:hover{text-decoration:underline}
+header{padding:20px 0;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:"Bricolage Grotesque";font-weight:800;font-size:1.25rem;letter-spacing:-.02em;color:var(--ink);display:flex;gap:8px;align-items:center;text-decoration:none}
+.logo .dot{width:11px;height:11px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+nav a{color:var(--muted);font-weight:500;margin-left:16px;font-size:.9rem;text-decoration:none}
+.crumbs{font-size:.82rem;color:var(--muted);margin:6px 0 14px}.crumbs a{color:var(--muted);text-decoration:none}.crumbs span{margin:0 6px}
+.eyebrow{display:inline-block;font-weight:600;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--lock);background:var(--lock-soft);padding:5px 12px;border-radius:999px}
+h1{font-family:"Bricolage Grotesque";font-weight:800;font-size:clamp(1.9rem,5vw,2.8rem);line-height:1.06;letter-spacing:-.03em;margin:.25em 0 .35em}
+
+/* QUICK ANSWER BOX — directly under H1 (AEO/GEO best practice) */
+.quick{background:var(--lock-soft);border:1px solid color-mix(in srgb,var(--lock) 30%,transparent);border-radius:14px;padding:18px 20px;font-size:1.08rem;font-weight:500;margin:0 0 8px}
+.quick b{font-weight:700}
+.quick .lab{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--lock);font-weight:700;margin-bottom:6px}
+
+h2{font-family:"Bricolage Grotesque";font-weight:700;font-size:1.5rem;letter-spacing:-.02em;margin:2em 0 .4em}
+h3{font-family:"Bricolage Grotesque";font-weight:700;font-size:1.1rem;margin:1.4em 0 .3em}
+p{max-width:68ch}
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+@media(max-width:620px){.pillars{grid-template-columns:1fr}}
+.pillar{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.pillar .ic{font-size:1.3rem}.pillar b{display:block;margin:6px 0 2px;font-family:"Bricolage Grotesque"}
+.pillar small{color:var(--muted)}
+code{background:color-mix(in srgb,var(--ink) 8%,transparent);padding:2px 6px;border-radius:6px;font-size:.9em}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:4px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700;padding:14px 0;list-style:none}summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right;color:var(--brand);font-weight:800}details[open] summary::after{content:"\2013"}
+details p{padding-bottom:14px;margin:0;color:var(--muted)}
+.related{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:12px}
+.related a{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px;font-weight:600;color:var(--ink);text-decoration:none}
+.related a:hover{border-color:var(--brand)}
+.related a span{display:block;color:var(--muted);font-weight:500;font-size:.85rem;margin-top:3px}
+.source{font-size:.9rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;margin-top:30px}
+footer{padding:28px 0 50px;color:var(--muted);font-size:.86rem;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <a class="logo" href="/"><span class="dot"></span> NetPayHub</a>
+    <nav><a href="/ireland/">Ireland</a><a href="/methodology/">Methodology</a><a href="/about/">About</a></nav>
+  </header>
+
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span>How We Protect Your Data</nav>
+
+  <span class="eyebrow">🔒 Privacy-first by design</span>
+  <h1>How We Protect Your Data</h1>
+
+  <!-- QUICK ANSWER BOX, directly under H1 -->
+  <div class="quick">
+    <span class="lab">Quick answer</span>
+    Your salary <b>never leaves your browser</b>. Every NetPayHub calculator runs entirely on your device, the page is technically <b>blocked from sending any data out</b> (<code>connect-src 'none'</code>), and <b>nothing is stored</b> — no accounts, no tracking, no third-party scripts.
+  </div>
+
+  <p>Salary and tax figures are some of the most sensitive numbers you own. Most online calculators send what you type to a server to be processed. We built NetPayHub so that is impossible.</p>
+
+  <h2>The four guarantees</h2>
+  <div class="pillars">
+    <div class="pillar"><div class="ic">🧮</div><b>Computed locally</b><small>The tax maths (PAYE, USC, PRSI) runs in JavaScript on your device — never on our servers.</small></div>
+    <div class="pillar"><div class="ic">🚫</div><b>No data can leave</b><small>A Content-Security-Policy with <code>connect-src 'none'</code> blocks every outbound request.</small></div>
+    <div class="pillar"><div class="ic">🗑️</div><b>Nothing stored</b><small>No cookies on your inputs, no saved figures, no database. Refresh and it's gone.</small></div>
+    <div class="pillar"><div class="ic">👁️‍🗨️</div><b>No watchers</b><small>No third-party ad or analytics scripts run on the calculators, so nothing reads what you type.</small></div>
+  </div>
+
+  <h2>What is a Content-Security-Policy, and why it matters here</h2>
+  <p>A Content-Security-Policy (CSP) is a rule set the browser enforces on a page. Ours tells your browser to refuse any network connection the page tries to make. Even if a bug or a malicious script attempted to upload your salary, the browser would block it. This is the difference between <em>promising</em> privacy and <em>enforcing</em> it.</p>
+
+  <h2>How this works with Irish tax data</h2>
+  <p>Our calculators use the official 2026 bands from <a href="https://www.revenue.ie" rel="nofollow">Revenue.ie</a> and Budget 2026 — the standard rate cut-off, USC bands, PRSI rate and tax credits. Those <em>rules</em> are public and built into the page. Your personal numbers are matched against them locally. So you get an accurate <strong>take-home pay</strong> figure for <strong>PAYE</strong>, <strong>USC</strong> and <strong>PRSI</strong> without ever revealing your income to us or anyone else.</p>
+
+  <h2>Frequently asked questions</h2>
+  <details open>
+    <summary>Does NetPayHub store my salary?</summary>
+    <p>No. Nothing you type is stored. No accounts, no database of inputs. Close or refresh the page and your figures disappear.</p>
+  </details>
+  <details>
+    <summary>Can my salary be sent to a server?</summary>
+    <p>No. The <code>connect-src 'none'</code> policy blocks the page from opening any connection, and all calculation is local.</p>
+  </details>
+  <details>
+    <summary>Do you use tracking or ads that read my inputs?</summary>
+    <p>No third-party scripts run on the calculators. The site is served over HTTPS with strict security headers (HSTS, no-referrer, frame-deny).</p>
+  </details>
+
+  <h2>Try a privacy-first calculator</h2>
+  <div class="related">
+    <a href="/ireland/net-salary-calculator-2026/">Net salary calculator <span>Take-home after tax</span></a>
+    <a href="/ireland/freelance-tax-calculator-2026/">Freelance tax calculator <span>Self-employed estimate</span></a>
+    <a href="/ireland/day-rate-to-salary-calculator/">Day rate → salary <span>For contractors</span></a>
+  </div>
+
+  <p class="source">Published by the NetPayHub editorial team. Tax figures sourced from Revenue.ie and Budget 2026. Last updated: 29 May 2026. See our <a href="/methodology/">methodology</a> and <a href="/editorial-policy/">editorial policy</a>.</p>
+
+  <footer>© <span id="yr"></span> NetPayHub · Privacy-first Irish salary tools</footer>
+</div>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>

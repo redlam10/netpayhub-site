@@ -1,0 +1,22 @@
+# _headers — Netlify / Cloudflare Pages
+# Production security headers. Put this file at the site root.
+# NOTE: the hardened CSP below uses script-src 'self' (NO 'unsafe-inline').
+# For that to work, move the inline <script> from each page into an external
+# /app.js file. Until you do, temporarily add 'unsafe-inline' to script-src.
+
+/*
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: no-referrer
+  Permissions-Policy: geolocation=(), camera=(), microphone=(), payment=(), usb=()
+  Cross-Origin-Opener-Policy: same-origin
+  Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'self'; frame-ancestors 'none'; object-src 'none'
+
+# Long-cache the static assets
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable

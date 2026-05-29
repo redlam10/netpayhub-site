@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- ============================================================= -->
+<!-- SEO / META  — change these per page when you duplicate         -->
+<!-- ============================================================= -->
+<title>Day Rate to Salary Calculator (Ireland, 2026) | NetPayHub</title>
+<meta name="description" content="Free Ireland day rate to salary calculator. Convert a contractor or freelancer day rate into an equivalent annual, monthly and weekly salary. Export a PDF report instantly." />
+<link rel="canonical" href="https://netpayhub.com/ireland/day-rate-to-salary-calculator/" />
+
+<!-- ============================================================= -->
+<!-- JSON-LD SCHEMA — WebApplication + FAQPage                       -->
+<!-- This is what gets you indexed AND cited by AI Overviews.        -->
+<!-- Duplicate & edit text per page.                                 -->
+<!-- ============================================================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Day Rate to Salary Calculator (Ireland)",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "url": "https://netpayhub.com/ireland/day-rate-to-salary-calculator/",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+      "description": "Convert a day rate into an equivalent annual, monthly and weekly salary for contractors and freelancers in Ireland."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you convert a day rate to an annual salary in Ireland?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Multiply your day rate by the number of days you work per week, then by the number of weeks you work per year. For example, a €400 day rate at 5 days a week over 46 working weeks equals €92,000 per year before tax."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many weeks should I use for a contractor in Ireland?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most contractors use 44 to 48 weeks rather than 52, to account for unpaid holidays, bank holidays and gaps between contracts. 46 weeks is a common realistic default."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the result before or after tax?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This calculator shows gross income (before tax). To see take-home pay after PAYE, USC and PRSI, use the Ireland net salary calculator."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- Distinctive fonts: Bricolage Grotesque (display) + Hanken Grotesk (body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- jsPDF for the PDF export (allowed CDN) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<style>
+:root{
+  --bg:#FAF6EE;          /* warm paper */
+  --ink:#10241C;          /* deep forest ink */
+  --muted:#5C6B63;
+  --card:#FFFFFF;
+  --line:#E6DECF;
+  --brand:#0E5C43;        /* emerald */
+  --brand-2:#0A3D2C;
+  --accent:#F2A900;       /* sharp amber accent */
+  --accent-soft:#FFF3D6;
+  --good:#11A36B;
+  --shadow:0 1px 2px rgba(16,36,28,.06),0 12px 30px -12px rgba(16,36,28,.22);
+  --radius:18px;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0B1410; --ink:#EAF2EC; --muted:#9BB0A6; --card:#11201A;
+    --line:#23362D; --brand:#36D399; --brand-2:#0E5C43; --accent:#F2A900;
+    --accent-soft:#2A2410; --good:#36D399;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 18px 40px -16px rgba(0,0,0,.6);
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Hanken Grotesk",system-ui,sans-serif;
+  line-height:1.6;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(120% 70% at 100% 0%, color-mix(in srgb,var(--brand) 9%,transparent), transparent 60%);
+}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px}
+a{color:var(--brand);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* header */
+header{padding:22px 0;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:"Bricolage Grotesque";font-weight:800;font-size:1.25rem;letter-spacing:-.02em;color:var(--ink);display:flex;gap:8px;align-items:center}
+.logo .dot{width:11px;height:11px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+nav a{color:var(--muted);font-weight:500;margin-left:18px;font-size:.92rem}
+
+/* hero */
+.eyebrow{display:inline-block;font-weight:600;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);background:color-mix(in srgb,var(--brand) 12%,transparent);padding:5px 12px;border-radius:999px;margin-bottom:14px}
+h1{font-family:"Bricolage Grotesque";font-weight:800;font-size:clamp(2rem,5.5vw,3.1rem);line-height:1.04;letter-spacing:-.03em;margin:.1em 0 .35em}
+.lede{font-size:1.08rem;color:var(--muted);max-width:60ch;margin:0 0 26px}
+
+/* calculator card */
+.calc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media(max-width:720px){.calc{grid-template-columns:1fr;padding:18px;gap:22px}}
+.field{margin-bottom:18px}
+.field label{display:flex;justify-content:space-between;align-items:baseline;font-weight:600;font-size:.95rem;margin-bottom:8px}
+.field label small{color:var(--muted);font-weight:500}
+.num{display:flex;align-items:center;border:1.5px solid var(--line);border-radius:12px;background:var(--bg);overflow:hidden;transition:border-color .15s}
+.num:focus-within{border-color:var(--brand)}
+.num .sym{padding:0 12px;color:var(--muted);font-weight:600}
+.num input{flex:1;border:0;background:transparent;color:var(--ink);font:inherit;font-weight:600;font-size:1.05rem;padding:12px 12px 12px 0;outline:none;width:100%}
+select{width:100%;border:1.5px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);font:inherit;font-weight:600;padding:12px;outline:none}
+select:focus{border-color:var(--brand)}
+input[type=range]{width:100%;margin-top:12px;accent-color:var(--brand)}
+
+/* results */
+.results{display:flex;flex-direction:column;justify-content:center}
+.headline{background:linear-gradient(180deg,var(--brand) 0%,var(--brand-2) 100%);color:#fff;border-radius:14px;padding:22px;text-align:center;margin-bottom:14px}
+.headline .k{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;opacity:.85}
+.headline .v{font-family:"Bricolage Grotesque";font-weight:800;font-size:clamp(2rem,7vw,2.9rem);letter-spacing:-.02em;line-height:1.05;margin-top:4px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stat{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:14px}
+.stat .k{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.stat .v{font-family:"Bricolage Grotesque";font-weight:700;font-size:1.4rem;letter-spacing:-.01em}
+.btns{display:flex;gap:10px;margin-top:16px}
+.btn{flex:1;border:0;cursor:pointer;font:inherit;font-weight:700;padding:13px;border-radius:12px;transition:transform .08s,filter .15s}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--accent);color:#1a1300}
+.btn-primary:hover{filter:brightness(1.05)}
+.btn-ghost{background:transparent;color:var(--muted);border:1.5px solid var(--line)}
+
+/* GEO direct-answer block — what AI cites */
+.answer{margin:26px 0 0;background:var(--accent-soft);border-left:4px solid var(--accent);border-radius:10px;padding:16px 18px;font-size:1.05rem;font-weight:500}
+.answer b{font-weight:700}
+
+/* prose */
+section.prose{margin:46px 0}
+h2{font-family:"Bricolage Grotesque";font-weight:700;font-size:1.6rem;letter-spacing:-.02em;margin:0 0 .5em}
+.prose p{color:var(--ink);max-width:68ch}
+.formula{display:inline-block;background:var(--card);border:1px dashed var(--line);border-radius:10px;padding:10px 14px;font-weight:600;margin:8px 0}
+
+/* FAQ */
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:4px 18px;margin-bottom:10px}
+details summary{cursor:pointer;font-weight:700;padding:14px 0;list-style:none}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"+";float:right;color:var(--brand);font-weight:800}
+details[open] summary::after{content:"–"}
+details p{padding-bottom:14px;margin:0;color:var(--muted)}
+
+/* related links (internal linking) */
+.related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.related a{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;font-weight:600;color:var(--ink)}
+.related a:hover{border-color:var(--brand);text-decoration:none}
+.related a span{display:block;color:var(--muted);font-weight:500;font-size:.85rem;margin-top:3px}
+
+.source{font-size:.9rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;margin-top:30px}
+footer{padding:30px 0 50px;color:var(--muted);font-size:.88rem;text-align:center}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="logo"><span class="dot"></span> NetPayHub</div>
+    <nav>
+      <a href="/ireland/">Ireland</a>
+      <a href="/ireland/freelancers/">Freelancers</a>
+      <a href="/ireland/contractors/">Contractors</a>
+    </nav>
+  </header>
+
+  <!-- HERO + CALCULATOR -->
+  <span class="eyebrow">Ireland · 2026</span>
+  <h1>Day Rate to Salary Calculator</h1>
+  <p class="lede">Turn a contractor or freelancer day rate into the equivalent annual, monthly and weekly salary — then download a clean PDF report.</p>
+
+  <div class="calc">
+    <!-- INPUTS -->
+    <div class="inputs">
+      <div class="field">
+        <label for="rate">Day rate <small>€ / day</small></label>
+        <div class="num"><span class="sym">€</span><input id="rate" type="number" min="0" step="10" value="400" inputmode="decimal"></div>
+        <input id="rateRange" type="range" min="50" max="2000" step="10" value="400">
+      </div>
+
+      <div class="field">
+        <label for="days">Days worked per week</label>
+        <select id="days">
+          <option>1</option><option>2</option><option>3</option><option>4</option>
+          <option selected>5</option><option>6</option><option>7</option>
+        </select>
+      </div>
+
+      <div class="field" style="margin-bottom:0">
+        <label for="weeks">Working weeks per year <small>52 minus holidays</small></label>
+        <div class="num"><input id="weeks" type="number" min="1" max="52" step="1" value="46" inputmode="numeric"></div>
+      </div>
+    </div>
+
+    <!-- RESULTS -->
+    <div class="results">
+      <div class="headline">
+        <div class="k">Equivalent annual salary</div>
+        <div class="v" id="annual">€92,000</div>
+      </div>
+      <div class="grid2">
+        <div class="stat"><div class="k">Per month</div><div class="v" id="monthly">€7,667</div></div>
+        <div class="stat"><div class="k">Per week</div><div class="v" id="weekly">€2,000</div></div>
+      </div>
+      <div class="btns">
+        <button class="btn btn-primary" id="pdf">⬇ Export PDF report</button>
+        <button class="btn btn-ghost" id="reset">Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- GEO DIRECT ANSWER (kept first in the text flow so AI cites it) -->
+  <p class="answer" id="answer">A <b>€400</b> day rate in Ireland equals about <b>€92,000</b> per year, based on 5 days a week over 46 working weeks (before tax).</p>
+
+  <!-- HOW IT'S CALCULATED -->
+  <section class="prose">
+    <h2>How a day rate converts to a salary</h2>
+    <p>The maths is simple — the value is in choosing realistic inputs. Your gross annual income is your day rate multiplied by the days you work each week and the number of weeks you actually work in a year:</p>
+    <div class="formula">Annual = Day rate × Days per week × Working weeks</div>
+    <p>Permanent employees are usually paid across 52 weeks including paid holidays. Contractors and freelancers are not paid for time off, so using the full 52 weeks overstates your real income. A range of <b>44–48 weeks</b> is more honest once you allow for annual leave, Irish bank holidays and any gaps between contracts. This calculator defaults to 46.</p>
+    <p>Remember the figure above is <b>gross</b> — before income tax, USC and PRSI. To see what actually lands in your account, use the net salary calculator linked below.</p>
+  </section>
+
+  <!-- FAQ (mirror the JSON-LD above) -->
+  <section class="prose">
+    <h2>Frequently asked questions</h2>
+    <details open>
+      <summary>How do I convert a day rate to an annual salary in Ireland?</summary>
+      <p>Multiply your day rate by the days you work per week, then by your working weeks per year. A €400 day rate at 5 days over 46 weeks is €92,000 gross.</p>
+    </details>
+    <details>
+      <summary>How many weeks should a contractor use?</summary>
+      <p>Use 44–48 weeks instead of 52 to account for unpaid holidays, bank holidays and gaps between contracts. 46 is a common realistic default.</p>
+    </details>
+    <details>
+      <summary>Is this before or after tax?</summary>
+      <p>Before tax (gross). For take-home pay after PAYE, USC and PRSI, use the Ireland net salary calculator.</p>
+    </details>
+  </section>
+
+  <!-- INTERNAL LINKS — build topical authority -->
+  <section class="prose">
+    <h2>Related Ireland calculators</h2>
+    <div class="related">
+      <a href="/ireland/net-salary-calculator-2026/">Net salary calculator <span>Take-home after PAYE, USC &amp; PRSI</span></a>
+      <a href="/ireland/contract-vs-permanent-calculator/">Contract vs permanent <span>Compare both side by side</span></a>
+      <a href="/ireland/freelance-hourly-rate-calculator/">Freelance rate calculator <span>What you should charge</span></a>
+      <a href="/ireland/hourly-to-annual-salary-calculator/">Hourly to annual <span>From an hourly rate</span></a>
+    </div>
+
+    <p class="source">Source for Irish tax bands (used in the net calculators): <a href="https://www.revenue.ie" rel="nofollow">revenue.ie</a>. This tool provides estimates for planning only and is not tax advice.</p>
+  </section>
+
+  <footer>© <span id="yr"></span> NetPayHub · Built for Irish freelancers &amp; contractors</footer>
+</div>
+
+<script>
+/* =================================================================
+   CALCULATOR LOGIC
+   To duplicate for another calculator, change: the calc() formula,
+   the input IDs, the labels, the <title>/meta, and the JSON-LD.
+   ================================================================= */
+const $ = id => document.getElementById(id);
+const fmt = new Intl.NumberFormat('en-IE', {style:'currency', currency:'EUR', maximumFractionDigits:0});
+
+const els = {
+  rate:$('rate'), rateRange:$('rateRange'), days:$('days'), weeks:$('weeks'),
+  annual:$('annual'), monthly:$('monthly'), weekly:$('weekly'), answer:$('answer')
+};
+
+function readInputs(){
+  return {
+    rate: Math.max(0, parseFloat(els.rate.value) || 0),
+    days: parseInt(els.days.value, 10) || 0,
+    weeks: Math.min(52, Math.max(0, parseInt(els.weeks.value, 10) || 0))
+  };
+}
+
+function calc(){
+  const {rate, days, weeks} = readInputs();
+  const annual = rate * days * weeks;
+  const monthly = annual / 12;
+  const weekly = rate * days;
+
+  els.annual.textContent  = fmt.format(annual);
+  els.monthly.textContent = fmt.format(monthly);
+  els.weekly.textContent  = fmt.format(weekly);
+
+  // dynamic GEO answer sentence
+  els.answer.innerHTML =
+    `A <b>${fmt.format(rate)}</b> day rate in Ireland equals about <b>${fmt.format(annual)}</b> per year, ` +
+    `based on ${days} day${days===1?'':'s'} a week over ${weeks} working weeks (before tax).`;
+
+  return {rate, days, weeks, annual, monthly, weekly};
+}
+
+/* keep number box and slider in sync */
+els.rate.addEventListener('input', () => { els.rateRange.value = els.rate.value; calc(); });
+els.rateRange.addEventListener('input', () => { els.rate.value = els.rateRange.value; calc(); });
+els.days.addEventListener('input', calc);
+els.weeks.addEventListener('input', calc);
+
+$('reset').addEventListener('click', () => {
+  els.rate.value = 400; els.rateRange.value = 400; els.days.value = '5'; els.weeks.value = 46; calc();
+});
+
+/* =================================================================
+   PDF EXPORT  — the "AI can't do this" retention hook
+   ================================================================= */
+$('pdf').addEventListener('click', () => {
+  const d = calc();
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({unit:'pt', format:'a4'});
+  const W = doc.internal.pageSize.getWidth();
+  const today = new Date().toLocaleDateString('en-IE');
+
+  // header band
+  doc.setFillColor(14,92,67); doc.rect(0,0,W,90,'F');
+  doc.setTextColor(255,255,255);
+  doc.setFont('helvetica','bold'); doc.setFontSize(20);
+  doc.text('Day Rate → Salary Report', 40, 45);
+  doc.setFont('helvetica','normal'); doc.setFontSize(11);
+  doc.text('NetPayHub · Ireland · ' + today, 40, 66);
+
+  // inputs
+  let y = 130;
+  doc.setTextColor(16,36,28);
+  doc.setFont('helvetica','bold'); doc.setFontSize(13); doc.text('Your inputs', 40, y);
+  doc.setFont('helvetica','normal'); doc.setFontSize(12); y += 22;
+  doc.text(`Day rate:  ${fmt.format(d.rate)}`, 50, y); y += 18;
+  doc.text(`Days per week:  ${d.days}`, 50, y); y += 18;
+  doc.text(`Working weeks per year:  ${d.weeks}`, 50, y);
+
+  // results box
+  y += 36;
+  doc.setFillColor(247,243,235); doc.roundedRect(40, y, W-80, 150, 10, 10, 'F');
+  doc.setFont('helvetica','bold'); doc.setFontSize(13); doc.text('Equivalent gross salary', 60, y+30);
+  doc.setFontSize(26); doc.setTextColor(14,92,67);
+  doc.text(fmt.format(d.annual) + ' / year', 60, y+70);
+  doc.setTextColor(16,36,28); doc.setFontSize(13); doc.setFont('helvetica','normal');
+  doc.text(`${fmt.format(d.monthly)} / month`, 60, y+105);
+  doc.text(`${fmt.format(d.weekly)} / week`, 60, y+125);
+
+  // footnote
+  y += 180;
+  doc.setFontSize(9); doc.setTextColor(120,120,120);
+  doc.text('Gross figures before PAYE, USC and PRSI. Estimate for planning only — not tax advice.', 40, y);
+  doc.text('Source for tax bands: revenue.ie   ·   Generated at netpayhub.com', 40, y+14);
+
+  doc.save('day-rate-to-salary-ireland.pdf');
+});
+
+$('yr').textContent = new Date().getFullYear();
+calc();
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+# robots.txt — NetPayHub   (replace netpayhub.com with your domain)
+
+# 1) Standard search crawlers: full access
+User-agent: *
+Allow: /
+
+# 2) GEO — explicitly welcome AI / answer engines so your tools can be CITED.
+#    (Leaving these out, or blocking them, removes you from AI answers.)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# 3) Sitemap
+Sitemap: https://netpayhub.com/sitemap.xml
