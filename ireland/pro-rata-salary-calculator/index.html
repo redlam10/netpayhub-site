@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'self'; frame-ancestors 'none'">
+<meta name="referrer" content="no-referrer" />
+
+<title>Pro Rata Salary Calculator (Ireland)</title>
+<meta name="description" content="Work out a pro rata salary in Ireland. Enter the full-time salary, full-time hours and your actual hours to see your pro-rata annual and monthly pay." />
+<link rel="canonical" href="https://netpayhub.com/ireland/pro-rata-salary-calculator/" />
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NetPayHub">
+<meta property="og:url" content="https://netpayhub.com/ireland/pro-rata-salary-calculator/">
+<meta property="og:title" content="Pro Rata Salary Calculator (Ireland)">
+<meta property="og:description" content="Work out a pro rata salary in Ireland from the full-time salary, full-time hours and your actual hours.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Pro Rata Salary Calculator (Ireland)">
+<meta name="twitter:description" content="Work out a pro rata salary in Ireland from full-time salary and your actual hours.">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"Organization","@id":"https://netpayhub.com/#org","name":"NetPayHub","url":"https://netpayhub.com/","description":"Privacy-first salary and tax calculators. Every calculation runs in the browser; your data never leaves your device."},
+    {"@type":"WebApplication","name":"Pro Rata Salary Calculator (Ireland)","applicationCategory":"FinanceApplication","operatingSystem":"Web","url":"https://netpayhub.com/ireland/pro-rata-salary-calculator/","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"description":"Work out a pro-rata (part-time) salary in Ireland from a full-time salary and hours."},
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://netpayhub.com/"},
+      {"@type":"ListItem","position":2,"name":"Ireland","item":"https://netpayhub.com/ireland/"},
+      {"@type":"ListItem","position":3,"name":"Pro Rata Salary Calculator","item":"https://netpayhub.com/ireland/pro-rata-salary-calculator/"}
+    ]},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"How is a pro rata salary calculated?","acceptedAnswer":{"@type":"Answer","text":"Multiply the full-time salary by your hours divided by full-time hours. A €50,000 role at 39 full-time hours, worked at 24 hours, is €50,000 × 24 ÷ 39 = €30,769 pro rata."}},
+      {"@type":"Question","name":"What does pro rata mean?","acceptedAnswer":{"@type":"Answer","text":"Pro rata means 'in proportion'. A pro-rata salary scales a full-time salary down to the share of full-time hours you actually work."}},
+      {"@type":"Question","name":"Is the pro rata figure before tax?","acceptedAnswer":{"@type":"Answer","text":"Yes, it is the gross pro-rata salary before income tax, USC and PRSI. Put it into the net salary calculator to see take-home pay."}}
+    ]}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{--bg:#FAF6EE;--ink:#10241C;--muted:#5C6B63;--card:#FFFFFF;--line:#E6DECF;--brand:#0E5C43;--brand-2:#0A3D2C;--accent:#F2A900;--accent-soft:#FFF3D6;--lock:#1466C9;--lock-soft:#E7F0FE;--shadow:0 1px 2px rgba(16,36,28,.06),0 12px 30px -12px rgba(16,36,28,.22);--radius:18px}
+@media (prefers-color-scheme:dark){:root{--bg:#0B1410;--ink:#EAF2EC;--muted:#9BB0A6;--card:#11201A;--line:#23362D;--brand:#36D399;--accent:#F2A900;--accent-soft:#2A2410;--lock:#6FB1FF;--lock-soft:#10243F;--shadow:0 1px 2px rgba(0,0,0,.4),0 18px 40px -16px rgba(0,0,0,.6)}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hanken Grotesk",system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;background-image:radial-gradient(120% 70% at 100% 0%,color-mix(in srgb,var(--brand) 9%,transparent),transparent 60%)}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px}
+a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
+header{padding:20px 0;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:"Bricolage Grotesque";font-weight:800;font-size:1.25rem;letter-spacing:-.02em;color:var(--ink);display:flex;gap:8px;align-items:center}
+.logo a{color:var(--ink)}
+.logo .dot{width:11px;height:11px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+nav a{color:var(--muted);font-weight:500;margin-left:18px;font-size:.92rem}
+.crumbs{font-size:.86rem;color:var(--muted);padding:8px 0 0}
+.crumbs span{margin:0 8px;opacity:.6}
+.hero{padding:18px 0 6px}
+.herotop{display:flex;align-items:center;gap:14px;margin-bottom:6px}
+.eyebrow{display:inline-block;font-weight:600;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);background:color-mix(in srgb,var(--brand) 12%,transparent);padding:5px 12px;border-radius:999px}
+h1{font-family:"Bricolage Grotesque";font-weight:800;font-size:clamp(2rem,5.5vw,3.1rem);line-height:1.05;letter-spacing:-.03em;margin:.1em 0 .3em}
+.answer{margin:8px 0 22px;background:var(--accent-soft);border-left:4px solid var(--accent);border-radius:10px;padding:16px 18px;font-size:1.05rem;font-weight:500;max-width:70ch}
+.answer b{font-weight:700}
+.calc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media(max-width:720px){.calc{grid-template-columns:1fr;padding:18px;gap:22px}}
+.field{margin-bottom:18px}
+.field label{display:flex;justify-content:space-between;align-items:baseline;font-weight:600;font-size:.95rem;margin-bottom:8px}
+.field label small{color:var(--muted);font-weight:500}
+.num{display:flex;align-items:center;border:1.5px solid var(--line);border-radius:12px;background:var(--bg);overflow:hidden;transition:border-color .15s}
+.num:focus-within{border-color:var(--brand)}
+.num .sym{padding:0 12px;color:var(--muted);font-weight:600}
+.num input{flex:1;border:0;background:transparent;color:var(--ink);font:inherit;font-weight:600;font-size:1.05rem;padding:12px 12px 12px 0;outline:none;width:100%}
+input[type=range]{width:100%;margin-top:12px;accent-color:var(--brand)}
+.results{display:flex;flex-direction:column;justify-content:center}
+.headline{background:linear-gradient(180deg,var(--brand) 0%,var(--brand-2) 100%);color:#fff;border-radius:14px;padding:22px;text-align:center;margin-bottom:14px}
+.headline .k{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;opacity:.85}
+.headline .v{font-family:"Bricolage Grotesque";font-weight:800;font-size:clamp(2rem,7vw,2.9rem);letter-spacing:-.02em;line-height:1.05;margin-top:4px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stat{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:14px}
+.stat .k{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.stat .v{font-family:"Bricolage Grotesque";font-weight:700;font-size:1.4rem;letter-spacing:-.01em}
+.btns{display:flex;gap:10px;margin-top:16px}
+.btn{flex:1;border:0;cursor:pointer;font:inherit;font-weight:700;padding:13px;border-radius:12px;transition:transform .08s,filter .15s}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--accent);color:#1a1300}
+.btn-primary:hover{filter:brightness(1.05)}
+.btn-ghost{background:transparent;color:var(--muted);border:1.5px solid var(--line)}
+section.prose{margin:42px 0}
+h2{font-family:"Bricolage Grotesque";font-weight:700;font-size:1.5rem;letter-spacing:-.02em;margin:0 0 .5em}
+h3{font-family:"Bricolage Grotesque";font-weight:700;font-size:1.12rem;margin:1.2em 0 .3em}
+.prose p,p{color:var(--ink);max-width:68ch}
+.muted{color:var(--muted)}
+.formula{display:inline-block;background:var(--card);border:1px dashed var(--line);border-radius:10px;padding:10px 14px;font-weight:600;margin:8px 0}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:4px 18px;margin-bottom:10px}
+details summary{cursor:pointer;font-weight:700;padding:14px 0;list-style:none}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"+";float:right;color:var(--brand);font-weight:800}
+details[open] summary::after{content:"–"}
+details p{padding-bottom:14px;margin:0;color:var(--muted)}
+.related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.related a{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;font-weight:600;color:var(--ink)}
+.related a:hover{border-color:var(--brand);text-decoration:none}
+.related a span{display:block;color:var(--muted);font-weight:500;font-size:.85rem;margin-top:3px}
+.meta-author{display:flex;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-top:22px}
+.meta-author .av{width:40px;height:40px;border-radius:50%;background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-family:"Bricolage Grotesque";flex:0 0 auto}
+.source{font-size:.9rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;margin-top:26px}
+footer{padding:30px 0 50px;color:var(--muted);font-size:.86rem;text-align:center;border-top:1px solid var(--line);margin-top:40px}
+footer a{color:var(--muted)}
+.report{display:none}
+@media print{body{background:#fff;color:#000;background-image:none}.wrap>*:not(.report){display:none !important}.report{display:block}.report h2{font-family:Helvetica,Arial,sans-serif}}
+.report .rband{background:#0E5C43;color:#fff;padding:18px 22px;border-radius:10px}
+.report .rrow{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #ddd}
+.report .rtot{font-weight:800;color:#0E5C43;border-bottom:0}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="no-print">
+    <div class="logo"><span class="dot"></span> <a href="/">NetPayHub</a></div>
+    <nav>
+      <a href="/ireland/">Ireland</a>
+      <a href="/ireland/freelancers/">Freelancers</a>
+      <a href="/ireland/contractors/">Contractors</a>
+    </nav>
+  </header>
+
+  <nav class="crumbs no-print" aria-label="Breadcrumb">
+    <a href="/">Home</a><span>›</span><a href="/ireland/">Ireland</a><span>›</span>Pro Rata Salary Calculator
+  </nav>
+
+  <section class="hero no-print">
+    <div class="herotop">
+      <svg role="img" aria-label="Pro rata salary calculator Ireland" width="50" height="50" viewBox="0 0 50 50"><rect width="50" height="50" rx="13" fill="#0E5C43"/><text x="25" y="34" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="22" fill="#F2A900">½€</text></svg>
+      <span class="eyebrow">Ireland · Pure-math tool</span>
+    </div>
+    <h1>Pro rata salary calculator</h1>
+    <div class="answer" id="answer">A <b>€50,000</b> full-time role at 39 hours, worked at 24 hours a week, is a pro rata salary of <b>€30,769</b> (about <b>€2,564</b> a month) — 61.5% of full time.</div>
+  </section>
+
+  <div class="calc no-print">
+    <div class="inputs">
+      <div class="field">
+        <label for="ftsalary">Full-time salary <small>€ / year</small></label>
+        <div class="num"><span class="sym">€</span><input id="ftsalary" type="number" min="0" step="500" value="50000" inputmode="decimal"></div>
+        <input id="ftsalaryRange" type="range" min="0" max="150000" step="500" value="50000">
+      </div>
+      <div class="field">
+        <label for="fthours">Full-time hours / week</label>
+        <div class="num"><input id="fthours" type="number" min="1" max="80" step="0.5" value="39" inputmode="decimal"></div>
+      </div>
+      <div class="field" style="margin-bottom:0">
+        <label for="acthours">Your hours / week</label>
+        <div class="num"><input id="acthours" type="number" min="0" max="80" step="0.5" value="24" inputmode="decimal"></div>
+      </div>
+    </div>
+    <div class="results">
+      <div class="headline"><div class="k">Pro rata salary (gross)</div><div class="v" id="prorata">€30,769</div></div>
+      <div class="grid2">
+        <div class="stat"><div class="k">Per month</div><div class="v" id="monthly">€2,564</div></div>
+        <div class="stat"><div class="k">Of full time</div><div class="v" id="pct">61.5%</div></div>
+      </div>
+      <div class="btns">
+        <button class="btn btn-primary" id="pdf">⬇ Save PDF</button>
+        <button class="btn btn-ghost" id="reset">Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="prose no-print">
+    <h2>How the pro rata salary calculator works in Ireland</h2>
+    <p>"Pro rata" means in proportion. To scale a full-time salary to part-time hours, multiply it by
+      the share of full-time hours you work:</p>
+    <div class="formula">Pro rata salary = Full-time salary × (Your hours ÷ Full-time hours)</div>
+    <p>A <b>€50,000</b> role advertised at <b>39</b> full-time hours, worked at <b>24</b> hours a
+      week, pays <b>€50,000 × 24 ÷ 39 = €30,769</b> — that's <b>61.5%</b> of full time, or about
+      <b>€2,564</b> a month. No tax data is used, so the result never goes out of date.</p>
+    <p>This is the <b>gross</b> pro-rata figure. Drop it into the
+      <a href="/ireland/net-salary-calculator-2026/">net salary calculator</a> to see take-home pay
+      after income tax, USC and PRSI.</p>
+  </section>
+
+  <section class="prose no-print">
+    <h2>Frequently asked questions</h2>
+    <details open><summary>How is a pro rata salary calculated in Ireland?</summary>
+      <p>Multiply the full-time salary by your hours ÷ full-time hours. €50,000 × 24 ÷ 39 = €30,769 pro rata.</p></details>
+    <details><summary>What does "pro rata" mean?</summary>
+      <p>"In proportion." It scales a full-time salary down to the share of full-time hours you actually work.</p></details>
+    <details><summary>Is the figure before tax?</summary>
+      <p>Yes, it's gross. Use the <a href="/ireland/net-salary-calculator-2026/">net salary calculator</a> for take-home pay.</p></details>
+  </section>
+
+  <section class="prose no-print">
+    <h2>Related Ireland calculators</h2>
+    <div class="related">
+      <a href="/ireland/net-salary-calculator-2026/">Net salary calculator <span>Take-home after PAYE, USC &amp; PRSI</span></a>
+      <a href="/ireland/annual-salary-to-hourly-calculator/">Salary to hourly calculator <span>Hourly &amp; daily rate</span></a>
+      <a href="/ireland/overtime-pay-calculator/">Overtime pay calculator <span>1.5× and 2× rates</span></a>
+      <a href="/ireland/">All Ireland calculators <span>Browse the hub</span></a>
+    </div>
+
+    <div class="meta-author">
+      <div class="av">NP</div>
+      <div><b>Reviewed by the NetPayHub editorial team</b><br>
+        <small class="muted">Pure arithmetic — no tax data used. Last updated: 29 May 2026.</small></div>
+    </div>
+    <p class="source">A maths tool giving gross figures only — not tax advice. See our
+      <a href="/methodology/">methodology</a> and the
+      <a href="/ireland/net-salary-calculator-2026/">net salary calculator</a> for take-home pay.</p>
+  </section>
+
+  <footer class="no-print">
+    <nav aria-label="Footer links" style="display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;margin-bottom:10px">
+      <a href="/">Home</a>
+      <a href="/ireland/">Ireland</a>
+      <a href="/ireland/freelancers/">Freelancers</a>
+      <a href="/ireland/contractors/">Contractors</a>
+      <a href="/about/">About</a>
+      <a href="/methodology/">Methodology</a>
+      <a href="/editorial-policy/">Editorial Policy</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/disclaimer/">Disclaimer</a>
+      <a href="/how-we-protect-your-data/">How we protect your data</a>
+    </nav>
+    © <span id="yr"></span> NetPayHub · Estimates only — not financial advice.
+  </footer>
+
+  <div class="report" id="report"></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

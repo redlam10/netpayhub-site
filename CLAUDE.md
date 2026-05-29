@@ -96,3 +96,41 @@ When in doubt, match the patterns already present in the existing files.
 - Make focused changes, keep pages self-contained, then the user commits & pushes
   (Cloudflare auto-deploys). After edits, double-check: no broken internal links, calculators
   still compute, schema still valid, `_headers` intact.
+
+## 10. PER-PAGE SEO CHECKLIST (apply to EVERY page; new pages must comply automatically)
+
+- **One distinct focus keyword per page** — never reuse a focus keyword across pages.
+- **`<title>` ≤ 60 chars**, focus keyword FIRST, include "Ireland" (+ year only if relevant).
+  Unique per page.
+- **Meta description 140–160 chars**, includes the focus keyword, written to earn clicks. Unique.
+- **`<html lang="en">`**, descriptive folder slug, and `<link rel="canonical">` to the real
+  `https://netpayhub.com/...` URL.
+- **Exactly one `<h1>`** containing the focus keyword; the focus keyword also appears in **≥1
+  H2/H3**; keep a clean H1 → H2 → H3 order.
+- **Quick Answer box** directly under the H1: 1–2 citation-ready sentences containing a real number
+  (a worked example for tools).
+- **Open Graph + Twitter Card** meta: title, description, type, url.
+- **JSON-LD**: `WebApplication` (tools) + `FAQPage` + `BreadcrumbList`; `Organization` sitewide.
+- **Internal links to EXISTING pages only**, with descriptive keyword-rich anchors (never
+  "click here"). Cross-link related tools and the relevant hub/sub-hub.
+- **At least one image or inline SVG** with a descriptive `alt`/`aria-label` containing the focus
+  keyword (CSP-safe: inline SVG or self-hosted only).
+- **Natural semantic keywords** in the body where relevant (take-home pay, PAYE, USC, PRSI, gross
+  to net, tax credits); density ~0.8–2%, never stuff. (Pure-math tools state "no tax data used".)
+- **"Last updated" date + EEAT author block + source link** (revenue.ie for tax tools; for
+  pure-math tools link `/methodology/` and state that no tax data is used).
+- **Mobile-friendly**: short paragraphs (2–4 lines), bullet lists, scannable layout.
+- **Focus-keyword map** (the single target keyword per page — do not reuse):
+  - `/` → "Ireland salary calculator"
+  - `/ireland/` → "Ireland salary and tax calculators"
+  - `/ireland/net-salary-calculator-2026/` → "net salary calculator Ireland"
+  - `/ireland/day-rate-to-salary-calculator/` → "day rate to salary calculator Ireland"
+  - `/ireland/hourly-to-annual-salary-calculator/` → "hourly to annual salary Ireland"
+  - `/ireland/annual-salary-to-hourly-calculator/` → "salary to hourly calculator Ireland"
+  - `/ireland/freelance-hourly-rate-calculator/` → "freelance hourly rate calculator Ireland"
+  - `/ireland/pro-rata-salary-calculator/` → "pro rata salary calculator Ireland"
+  - `/ireland/overtime-pay-calculator/` → "overtime pay calculator Ireland"
+  - `/ireland/freelancers/` → "freelancer calculators Ireland"
+  - `/ireland/contractors/` → "contractor calculators Ireland"
+  - about, methodology, editorial-policy, privacy, terms, disclaimer: optimize titles/meta/
+    headings only; keep indexable but low sitemap priority — NOT keyword targets.
