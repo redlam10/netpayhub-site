@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'self'; frame-ancestors 'none'">
+<meta name="referrer" content="no-referrer" />
+
+<title>Ireland Tax Calculator 2026 — PAYE, USC &amp; PRSI</title>
+<meta name="description" content="Free Ireland tax calculator for 2026. Estimate take-home pay after PAYE, USC &amp; PRSI, or convert a contractor day rate — private and in your browser." />
+<link rel="canonical" href="https://netpayhub.com/ireland/" />
+
+<!-- Social / Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NetPayHub">
+<meta property="og:url" content="https://netpayhub.com/ireland/">
+<meta property="og:title" content="Ireland Tax Calculator 2026 — PAYE, USC &amp; PRSI">
+<meta property="og:description" content="Free Ireland tax calculator for 2026. Take-home pay after PAYE, USC &amp; PRSI, plus a day rate converter — private, in your browser.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ireland Tax Calculator 2026 — PAYE, USC &amp; PRSI">
+<meta name="twitter:description" content="Free Ireland tax calculator for 2026. Take-home pay after PAYE, USC &amp; PRSI, plus a day rate converter.">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"Organization","@id":"https://netpayhub.com/#org","name":"NetPayHub","url":"https://netpayhub.com/",
+     "description":"Privacy-first salary and tax calculators. Every calculation runs in the browser; your data never leaves your device."},
+    {"@type":"CollectionPage","@id":"https://netpayhub.com/ireland/#page",
+     "url":"https://netpayhub.com/ireland/",
+     "name":"Ireland Salary & Tax Calculators 2026",
+     "isPartOf":{"@id":"https://netpayhub.com/#site"},
+     "description":"Privacy-first Ireland salary and tax calculators built on the official Budget 2026 PAYE, USC and PRSI bands."},
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://netpayhub.com/"},
+      {"@type":"ListItem","position":2,"name":"Ireland","item":"https://netpayhub.com/ireland/"}
+    ]},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"What taxes are deducted from a salary in Ireland?",
+       "acceptedAnswer":{"@type":"Answer","text":"Irish employees pay income tax under PAYE, the Universal Social Charge (USC) and Pay Related Social Insurance (PRSI). Take-home pay is your gross salary minus these three deductions, after tax credits are applied."}},
+      {"@type":"Question","name":"What are the 2026 income tax bands in Ireland?",
+       "acceptedAnswer":{"@type":"Answer","text":"For 2026, income tax is charged at 20% up to €44,000 for a single person (€53,000 for a married couple with one income) and 40% above that. Personal and Employee (PAYE) tax credits of €2,000 each reduce the tax due."}},
+      {"@type":"Question","name":"Are these calculators free and private?",
+       "acceptedAnswer":{"@type":"Answer","text":"Yes. Every calculator is free and runs entirely in your browser. Your salary and income figures are never sent to a server or stored anywhere."}}
+    ]}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{--bg:#FAF6EE;--ink:#10241C;--muted:#5C6B63;--card:#FFFFFF;--line:#E6DECF;--brand:#0E5C43;--brand-2:#0A3D2C;--accent:#F2A900;--accent-soft:#FFF3D6;--lock:#1466C9;--lock-soft:#E7F0FE;--shadow:0 1px 2px rgba(16,36,28,.06),0 12px 30px -12px rgba(16,36,28,.22);--radius:18px}
+@media (prefers-color-scheme:dark){:root{--bg:#0B1410;--ink:#EAF2EC;--muted:#9BB0A6;--card:#11201A;--line:#23362D;--brand:#36D399;--accent:#F2A900;--accent-soft:#2A2410;--lock:#6FB1FF;--lock-soft:#10243F;--shadow:0 1px 2px rgba(0,0,0,.4),0 18px 40px -16px rgba(0,0,0,.6)}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hanken Grotesk",system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;background-image:radial-gradient(120% 70% at 100% 0%,color-mix(in srgb,var(--brand) 9%,transparent),transparent 60%)}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px}
+a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
+header{padding:20px 0;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:"Bricolage Grotesque";font-weight:800;font-size:1.3rem;letter-spacing:-.02em;color:var(--ink);display:flex;gap:8px;align-items:center}
+.logo a{color:var(--ink)}
+.logo .dot{width:11px;height:11px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+nav a{color:var(--muted);font-weight:500;margin-left:18px;font-size:.92rem}
+.crumbs{font-size:.86rem;color:var(--muted);padding:6px 0 0}
+.crumbs span{margin:0 8px;opacity:.6}
+.hero{padding:24px 0 6px}
+.eyebrow{display:inline-block;font-weight:600;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);background:color-mix(in srgb,var(--brand) 12%,transparent);padding:5px 12px;border-radius:999px}
+h1{font-family:"Bricolage Grotesque";font-weight:800;font-size:clamp(2rem,5.5vw,3.2rem);line-height:1.05;letter-spacing:-.03em;margin:.25em 0 .35em}
+.answer{margin:18px 0 6px;background:var(--accent-soft);border-left:4px solid var(--accent);border-radius:10px;padding:16px 18px;font-size:1.06rem;font-weight:500;max-width:70ch}
+.answer b{font-weight:700}
+.secbar{display:inline-flex;align-items:center;gap:10px;background:var(--lock-soft);border:1px solid color-mix(in srgb,var(--lock) 30%,transparent);border-radius:999px;padding:9px 16px;font-weight:600;font-size:.92rem;margin-top:14px}
+h2{font-family:"Bricolage Grotesque";font-weight:700;font-size:1.5rem;letter-spacing:-.02em;margin:2em 0 .6em}
+p{color:var(--ink);max-width:68ch}
+.muted{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.tool{display:block;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow);transition:border-color .15s,transform .08s}
+.tool:hover{border-color:var(--brand);text-decoration:none;transform:translateY(-2px)}
+.tool .ic{font-size:1.5rem}
+.tool b{display:block;font-family:"Bricolage Grotesque";font-size:1.12rem;margin:8px 0 3px;color:var(--ink)}
+.tool span{color:var(--muted);font-size:.92rem}
+.tool.soon{opacity:.55;pointer-events:none}
+.tool.soon em{font-style:normal;font-size:.72rem;background:var(--accent-soft);color:#7a5a00;padding:2px 8px;border-radius:999px;float:right}
+table{border-collapse:collapse;width:100%;max-width:560px;margin:8px 0;font-size:.96rem}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line)}
+th{font-family:"Bricolage Grotesque";font-weight:700}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:4px 18px;margin-bottom:10px}
+details summary{cursor:pointer;font-weight:700;padding:14px 0;list-style:none}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"+";float:right;color:var(--brand);font-weight:800}
+details[open] summary::after{content:"–"}
+details p{padding-bottom:14px;margin:0;color:var(--muted)}
+.source{font-size:.9rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;margin-top:30px}
+footer{padding:34px 0 50px;color:var(--muted);font-size:.88rem;text-align:center;border-top:1px solid var(--line);margin-top:40px}
+footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="logo"><span class="dot"></span> <a href="/">NetPayHub</a></div>
+    <nav>
+      <a href="/ireland/">Ireland</a>
+      <a href="/ireland/net-salary-calculator-2026/">Net salary</a>
+      <a href="/ireland/day-rate-to-salary-calculator/">Day rate</a>
+      <a href="/how-we-protect-your-data/">Privacy</a>
+    </nav>
+  </header>
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a><span>›</span>Ireland
+  </nav>
+
+  <section class="hero">
+    <span class="eyebrow">Ireland · 2026 · Revenue bands</span>
+    <h1>Ireland salary &amp; tax calculators</h1>
+    <div class="answer">
+      <b>NetPayHub's Ireland calculators use the official Budget 2026 tax bands</b> — PAYE, USC and
+      PRSI — to estimate your take-home pay and convert contractor day rates. Every calculation runs
+      privately in your browser.
+    </div>
+    <span class="secbar">🔒 Your data never leaves your device</span>
+  </section>
+
+  <h2>Choose an Ireland tax calculator</h2>
+  <div class="grid">
+    <a class="tool" href="/ireland/net-salary-calculator-2026/">
+      <div class="ic">💶</div><b>Net Salary Calculator</b>
+      <span>Your take-home pay after PAYE, USC &amp; PRSI (2026).</span>
+    </a>
+    <a class="tool" href="/ireland/day-rate-to-salary-calculator/">
+      <div class="ic">📅</div><b>Day Rate → Salary</b>
+      <span>Turn a contractor day rate into a yearly salary.</span>
+    </a>
+    <a class="tool soon" href="#"><em>Soon</em>
+      <div class="ic">⏱️</div><b>Hourly → Annual</b>
+      <span>From an hourly rate to a full-year salary.</span>
+    </a>
+    <a class="tool soon" href="#"><em>Soon</em>
+      <div class="ic">🧾</div><b>Freelance Tax Calculator</b>
+      <span>Self-employed tax estimate for Ireland.</span>
+    </a>
+  </div>
+
+  <h2>How is salary taxed in Ireland?</h2>
+  <p>If you're an employee in Ireland, three deductions come out of your gross pay before it lands in
+    your account: <b>income tax (PAYE)</b>, the <b>Universal Social Charge (USC)</b> and
+    <b>Pay Related Social Insurance (PRSI)</b>. Tax credits then reduce the income tax you actually
+    owe. Our net salary calculator applies all three using the Budget 2026 figures.</p>
+
+  <h2>2026 income tax bands (PAYE)</h2>
+  <table>
+    <tr><th>Situation</th><th>20% rate up to</th><th>40% above</th></tr>
+    <tr><td>Single person</td><td>€44,000</td><td>€44,000</td></tr>
+    <tr><td>Married, one income</td><td>€53,000</td><td>€53,000</td></tr>
+  </table>
+  <p class="muted">Personal tax credit €2,000 + Employee (PAYE) tax credit €2,000. USC bands: 0.5%,
+    then 2% up to €28,700, then 3% and 8%. PRSI is 4.2% (rising to 4.35% from 1 October 2026).</p>
+
+  <h2>Frequently asked questions</h2>
+  <details><summary>What taxes are deducted from a salary in Ireland?</summary>
+    <p>Income tax under PAYE, the Universal Social Charge (USC) and PRSI. Take-home pay is your gross
+      salary minus these three, after your tax credits are applied.</p></details>
+  <details><summary>What are the 2026 income tax bands?</summary>
+    <p>20% up to €44,000 for a single person (€53,000 for a married couple with one income), and 40%
+      above that. Personal and Employee PAYE credits of €2,000 each reduce the tax due.</p></details>
+  <details><summary>Are these calculators free and private?</summary>
+    <p>Yes — every calculator is free and runs entirely in your browser. Your figures are never sent
+      to a server or stored. <a href="/how-we-protect-your-data/">See how we protect your data</a>.</p></details>
+
+  <p class="source">Sources: <a href="https://www.revenue.ie" rel="nofollow">revenue.ie</a>,
+    Budget 2026 (gov.ie). These tools provide estimates for planning only and are not tax advice.
+    Verify your exact position with Revenue or a qualified adviser. Last updated: 29 May 2026.</p>
+
+  <footer>
+    © <span id="yr"></span> NetPayHub · Privacy-first Irish salary tools ·
+    <a href="/how-we-protect-your-data/">Privacy</a>
+  </footer>
+</div>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>

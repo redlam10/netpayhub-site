@@ -7,9 +7,19 @@
 <!-- ============================================================= -->
 <!-- SEO / META  — change these per page when you duplicate         -->
 <!-- ============================================================= -->
-<title>Day Rate to Salary Calculator (Ireland, 2026) | NetPayHub</title>
-<meta name="description" content="Free Ireland day rate to salary calculator. Convert a contractor or freelancer day rate into an equivalent annual, monthly and weekly salary. Export a PDF report instantly." />
+<title>Day Rate to Salary Calculator — Ireland 2026</title>
+<meta name="description" content="Day rate to salary calculator for Ireland (2026). Convert a contractor or freelancer day rate into an annual, monthly and weekly salary — free and private." />
 <link rel="canonical" href="https://netpayhub.com/ireland/day-rate-to-salary-calculator/" />
+
+<!-- Social / Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NetPayHub">
+<meta property="og:url" content="https://netpayhub.com/ireland/day-rate-to-salary-calculator/">
+<meta property="og:title" content="Day Rate to Salary Calculator — Ireland 2026">
+<meta property="og:description" content="Day rate to salary calculator for Ireland (2026). Convert a contractor day rate into an annual, monthly and weekly salary — free and private.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Day Rate to Salary Calculator — Ireland 2026">
+<meta name="twitter:description" content="Convert a contractor or freelancer day rate into an annual, monthly and weekly salary. Free and private.">
 
 <!-- ============================================================= -->
 <!-- JSON-LD SCHEMA — WebApplication + FAQPage                       -->
@@ -28,6 +38,14 @@
       "url": "https://netpayhub.com/ireland/day-rate-to-salary-calculator/",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
       "description": "Convert a day rate into an equivalent annual, monthly and weekly salary for contractors and freelancers in Ireland."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://netpayhub.com/"},
+        {"@type":"ListItem","position":2,"name":"Ireland","item":"https://netpayhub.com/ireland/"},
+        {"@type":"ListItem","position":3,"name":"Day Rate to Salary Calculator","item":"https://netpayhub.com/ireland/day-rate-to-salary-calculator/"}
+      ]
     },
     {
       "@type": "FAQPage",
@@ -66,9 +84,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- jsPDF for the PDF export (allowed CDN) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <style>
 :root{
@@ -109,7 +124,10 @@ a:hover{text-decoration:underline}
 header{padding:22px 0;display:flex;align-items:center;justify-content:space-between}
 .logo{font-family:"Bricolage Grotesque";font-weight:800;font-size:1.25rem;letter-spacing:-.02em;color:var(--ink);display:flex;gap:8px;align-items:center}
 .logo .dot{width:11px;height:11px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.logo a{color:var(--ink)}
 nav a{color:var(--muted);font-weight:500;margin-left:18px;font-size:.92rem}
+.crumbs{font-size:.86rem;color:var(--muted);padding:10px 0 0}
+.crumbs span{margin:0 8px;opacity:.6}
 
 /* hero */
 .eyebrow{display:inline-block;font-weight:600;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);background:color-mix(in srgb,var(--brand) 12%,transparent);padding:5px 12px;border-radius:999px;margin-bottom:14px}
@@ -172,6 +190,18 @@ details p{padding-bottom:14px;margin:0;color:var(--muted)}
 
 .source{font-size:.9rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;margin-top:30px}
 footer{padding:30px 0 50px;color:var(--muted);font-size:.88rem;text-align:center}
+
+/* ---- PRINT REPORT (native PDF, no third-party scripts) ---- */
+.report{display:none}
+@media print{
+  body{background:#fff;color:#000;background-image:none}
+  .wrap>*:not(.report){display:none !important}
+  .report{display:block}
+  .report h2{font-family:Helvetica,Arial,sans-serif}
+}
+.report .rband{background:#0E5C43;color:#fff;padding:18px 22px;border-radius:10px}
+.report .rrow{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #ddd}
+.report .rtot{font-weight:800;color:#0E5C43;border-bottom:0}
 </style>
 </head>
 
@@ -179,13 +209,18 @@ footer{padding:30px 0 50px;color:var(--muted);font-size:.88rem;text-align:center
 <div class="wrap">
 
   <header>
-    <div class="logo"><span class="dot"></span> NetPayHub</div>
+    <div class="logo"><span class="dot"></span> <a href="/">NetPayHub</a></div>
     <nav>
+      <a href="/ireland/">Ireland</a>
       <a href="/ireland/net-salary-calculator-2026/">Net salary</a>
       <a href="/ireland/day-rate-to-salary-calculator/">Day rate</a>
       <a href="/how-we-protect-your-data/">Privacy</a>
     </nav>
   </header>
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a><span>›</span><a href="/ireland/">Ireland</a><span>›</span>Day Rate to Salary Calculator
+  </nav>
 
   <!-- HERO + CALCULATOR -->
   <span class="eyebrow">Ireland · 2026</span>
@@ -237,7 +272,7 @@ footer{padding:30px 0 50px;color:var(--muted);font-size:.88rem;text-align:center
 
   <!-- HOW IT'S CALCULATED -->
   <section class="prose">
-    <h2>How a day rate converts to a salary</h2>
+    <h2>How the day rate to salary calculator works</h2>
     <p>The maths is simple — the value is in choosing realistic inputs. Your gross annual income is your day rate multiplied by the days you work each week and the number of weeks you actually work in a year:</p>
     <div class="formula">Annual = Day rate × Days per week × Working weeks</div>
     <p>Permanent employees are usually paid across 52 weeks including paid holidays. Contractors and freelancers are not paid for time off, so using the full 52 weeks overstates your real income. A range of <b>44–48 weeks</b> is more honest once you allow for annual leave, Irish bank holidays and any gaps between contracts. This calculator defaults to 46.</p>
@@ -267,13 +302,16 @@ footer{padding:30px 0 50px;color:var(--muted);font-size:.88rem;text-align:center
     <div class="related">
       <a href="/ireland/net-salary-calculator-2026/">Net salary calculator <span>Take-home after PAYE, USC &amp; PRSI</span></a>
       <a href="/how-we-protect-your-data/">How we protect your data <span>Our privacy approach</span></a>
-      <a href="/">All calculators <span>Back to the home page</span></a>
+      <a href="/ireland/">All Ireland calculators <span>Browse the hub</span></a>
     </div>
 
     <p class="source">Source for Irish tax bands (used in the net calculators): <a href="https://www.revenue.ie" rel="nofollow">revenue.ie</a>. This tool provides estimates for planning only and is not tax advice.</p>
   </section>
 
   <footer>© <span id="yr"></span> NetPayHub · Built for Irish freelancers &amp; contractors</footer>
+
+  <!-- HIDDEN PRINT REPORT (filled by JS before printing; no external libs) -->
+  <div class="report" id="report"></div>
 </div>
 
 <script>
@@ -327,49 +365,25 @@ $('reset').addEventListener('click', () => {
 });
 
 /* =================================================================
-   PDF EXPORT  — the "AI can't do this" retention hook
+   PDF EXPORT — native print-to-PDF, 100% local (no third-party libs)
+   Builds a clean report, then opens the browser's print/Save-as-PDF.
    ================================================================= */
 $('pdf').addEventListener('click', () => {
   const d = calc();
-  const { jsPDF } = window.jspdf;
-  const doc = new jsPDF({unit:'pt', format:'a4'});
-  const W = doc.internal.pageSize.getWidth();
   const today = new Date().toLocaleDateString('en-IE');
-
-  // header band
-  doc.setFillColor(14,92,67); doc.rect(0,0,W,90,'F');
-  doc.setTextColor(255,255,255);
-  doc.setFont('helvetica','bold'); doc.setFontSize(20);
-  doc.text('Day Rate → Salary Report', 40, 45);
-  doc.setFont('helvetica','normal'); doc.setFontSize(11);
-  doc.text('NetPayHub · Ireland · ' + today, 40, 66);
-
-  // inputs
-  let y = 130;
-  doc.setTextColor(16,36,28);
-  doc.setFont('helvetica','bold'); doc.setFontSize(13); doc.text('Your inputs', 40, y);
-  doc.setFont('helvetica','normal'); doc.setFontSize(12); y += 22;
-  doc.text(`Day rate:  ${fmt.format(d.rate)}`, 50, y); y += 18;
-  doc.text(`Days per week:  ${d.days}`, 50, y); y += 18;
-  doc.text(`Working weeks per year:  ${d.weeks}`, 50, y);
-
-  // results box
-  y += 36;
-  doc.setFillColor(247,243,235); doc.roundedRect(40, y, W-80, 150, 10, 10, 'F');
-  doc.setFont('helvetica','bold'); doc.setFontSize(13); doc.text('Equivalent gross salary', 60, y+30);
-  doc.setFontSize(26); doc.setTextColor(14,92,67);
-  doc.text(fmt.format(d.annual) + ' / year', 60, y+70);
-  doc.setTextColor(16,36,28); doc.setFontSize(13); doc.setFont('helvetica','normal');
-  doc.text(`${fmt.format(d.monthly)} / month`, 60, y+105);
-  doc.text(`${fmt.format(d.weekly)} / week`, 60, y+125);
-
-  // footnote
-  y += 180;
-  doc.setFontSize(9); doc.setTextColor(120,120,120);
-  doc.text('Gross figures before PAYE, USC and PRSI. Estimate for planning only — not tax advice.', 40, y);
-  doc.text('Source for tax bands: revenue.ie   ·   Generated at netpayhub.com', 40, y+14);
-
-  doc.save('day-rate-to-salary-ireland.pdf');
+  $('report').innerHTML =
+    `<div class="rband"><h2 style="margin:0">Day Rate → Salary Report</h2>
+       <div style="opacity:.9;font-size:13px">NetPayHub · Ireland · ${today}</div></div>
+     <div style="padding:18px 4px">
+       <div class="rrow"><span>Day rate</span><b>${fmt.format(d.rate)}</b></div>
+       <div class="rrow"><span>Days per week</span><b>${d.days}</b></div>
+       <div class="rrow"><span>Working weeks per year</span><b>${d.weeks}</b></div>
+       <div class="rrow"><span>Per week</span><b>${fmt.format(d.weekly)}</b></div>
+       <div class="rrow"><span>Per month</span><b>${fmt.format(d.monthly)}</b></div>
+       <div class="rrow rtot"><span>Equivalent gross salary</span><b>${fmt.format(d.annual)} / year</b></div>
+       <p style="font-size:11px;color:#666;margin-top:18px">Gross figures before PAYE, USC and PRSI. Estimate for planning only — not tax advice. Source for tax bands: revenue.ie. Generated locally in your browser — no data was sent or stored.</p>
+     </div>`;
+  window.print();
 });
 
 $('yr').textContent = new Date().getFullYear();
