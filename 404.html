@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'self'; frame-ancestors 'none'">
+<meta name="referrer" content="no-referrer" />
+<meta name="robots" content="noindex, follow" />
+
+<title>Page not found (404) — NetPayHub</title>
+<meta name="description" content="That page couldn't be found. Browse NetPayHub's free, privacy-first Irish salary and tax calculators instead." />
+
+<link rel="icon" type="image/png" href="/assets/netpayhub-icon.png">
+<link rel="apple-touch-icon" href="/assets/netpayhub-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/assets/tokens.css">
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hanken Grotesk",system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;background-image:radial-gradient(120% 70% at 100% 0%,color-mix(in srgb,var(--brand) 9%,transparent),transparent 60%)}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px}
+a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
+header{padding:20px 0;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:"Bricolage Grotesque";font-weight:800;font-size:1.25rem;letter-spacing:-.02em;color:var(--ink);display:flex;gap:8px;align-items:center}
+nav a{color:var(--muted);font-weight:500;margin-left:16px;font-size:.9rem}
+.hero{text-align:center;padding:48px 0 8px}
+.code{font-family:"Bricolage Grotesque";font-weight:800;font-size:clamp(3.5rem,14vw,7rem);line-height:1;letter-spacing:-.04em;color:var(--brand)}
+h1{font-family:"Bricolage Grotesque";font-weight:800;font-size:clamp(1.6rem,5vw,2.3rem);letter-spacing:-.02em;margin:.2em 0 .3em}
+.lede{font-size:1.06rem;color:var(--muted);max-width:56ch;margin:0 auto 22px}
+.related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;max-width:760px;margin:0 auto;text-align:left}
+.related a{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;font-weight:600;color:var(--ink)}
+.related a:hover{border-color:var(--brand);text-decoration:none}
+.related a span{display:block;color:var(--muted);font-weight:500;font-size:.85rem;margin-top:3px}
+footer{padding:34px 0 50px;color:var(--muted);font-size:.86rem;text-align:center;border-top:1px solid var(--line);margin-top:44px}
+footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap" id="main">
+
+  <header>
+    <a class="logo" href="/" aria-label="NetPayHub — home" style="text-decoration:none"><img src="/assets/netpayhub-icon.png" alt="" width="36" height="36" style="display:block;flex:0 0 auto"> NetPayHub</a>
+    <nav>
+      <a href="/ireland/">Ireland</a>
+      <a href="/ireland/freelancers/">Freelancers</a>
+      <a href="/ireland/contractors/">Contractors</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="code">404</div>
+    <h1>That page took an unpaid day off</h1>
+    <p class="lede">We couldn't find the page you were looking for. It may have moved or never existed. Try one of our free, privacy-first Irish calculators below.</p>
+  </section>
+
+  <div class="related">
+    <a href="/ireland/net-salary-calculator-2026/">Net salary calculator <span>Take-home after PAYE, USC &amp; PRSI</span></a>
+    <a href="/ireland/day-rate-to-salary-calculator/">Day rate to salary calculator <span>For contractors</span></a>
+    <a href="/ireland/freelance-tax-calculator-2026/">Freelance tax calculator <span>Self-employed take-home</span></a>
+    <a href="/ireland/pension-tax-relief-calculator/">Pension tax relief calculator <span>Cut the tax on your pay</span></a>
+    <a href="/ireland/">All Ireland calculators <span>Browse the hub</span></a>
+    <a href="/">Back to home <span>Start again</span></a>
+  </div>
+
+  <footer>
+    <nav aria-label="Footer links" style="display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;margin-bottom:10px">
+      <a href="/">Home</a>
+      <a href="/ireland/">Ireland</a>
+      <a href="/about/">About</a>
+      <a href="/methodology/">Methodology</a>
+      <a href="/editorial-policy/">Editorial Policy</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/disclaimer/">Disclaimer</a>
+      <a href="/how-we-protect-your-data/">How we protect your data</a>
+    </nav>
+    © <span id="yr"></span> NetPayHub · Estimates only — not financial advice.
+  </footer>
+</div>
+<script src="/assets/yr.js"></script>
+</body>
+</html>
