@@ -37,16 +37,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="/assets/tokens.css">
 <style>
-:root{--bg:#FAF6EE;--ink:#10241C;--muted:#5C6B63;--card:#FFFFFF;--line:#E6DECF;--brand:#0E5C43;--brand-2:#0A3D2C;--accent:#F2A900;--accent-soft:#FFF3D6;--lock:#1466C9;--lock-soft:#E7F0FE;--shadow:0 1px 2px rgba(16,36,28,.06),0 12px 30px -12px rgba(16,36,28,.22);--radius:18px}
-@media (prefers-color-scheme:dark){:root{--bg:#0B1410;--ink:#EAF2EC;--muted:#9BB0A6;--card:#11201A;--line:#23362D;--brand:#36D399;--accent:#F2A900;--accent-soft:#2A2410;--lock:#6FB1FF;--lock-soft:#10243F;--shadow:0 1px 2px rgba(0,0,0,.4),0 18px 40px -16px rgba(0,0,0,.6)}}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hanken Grotesk",system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;background-image:radial-gradient(120% 70% at 100% 0%,color-mix(in srgb,var(--brand) 9%,transparent),transparent 60%)}
 .wrap{max-width:920px;margin:0 auto;padding:0 20px}
 a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
 header{padding:20px 0;display:flex;align-items:center;justify-content:space-between}
 .logo{font-family:"Bricolage Grotesque";font-weight:800;font-size:1.3rem;letter-spacing:-.02em;color:var(--ink);display:flex;gap:8px;align-items:center}
-.logo .dot{width:11px;height:11px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.logo .dot{width:11px;height:11px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 4px var(--tint)}
 nav a{color:var(--muted);font-weight:500;margin-left:18px;font-size:.92rem}
 .hero{padding:30px 0 10px}
 .eyebrow{display:inline-block;font-weight:600;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);background:color-mix(in srgb,var(--brand) 12%,transparent);padding:5px 12px;border-radius:999px}
@@ -83,7 +82,7 @@ footer a{color:var(--muted)}
   </header>
 
   <section class="hero">
-    <svg role="img" aria-label="Ireland salary calculator" width="48" height="48" viewBox="0 0 48 48" style="vertical-align:middle;margin-bottom:8px"><rect width="48" height="48" rx="12" fill="#0E5C43"/><text x="24" y="32" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="24" fill="#F2A900">€</text></svg>
+    <svg role="img" aria-label="Ireland salary calculator" width="48" height="48" viewBox="0 0 48 48" style="vertical-align:middle;margin-bottom:8px"><rect width="48" height="48" rx="12" fill="#0E7C6B"/><text x="24" y="32" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="24" fill="#E59A52">€</text></svg>
     <span class="eyebrow">🔒 Privacy-first · Ireland 2026</span>
     <h1>Ireland salary calculators that never see your salary.</h1>
     <p class="lede">Work out your take-home pay, day rate and more — using Ireland's official 2026 tax bands. Every calculation runs in your browser, so your numbers stay 100% private.</p>

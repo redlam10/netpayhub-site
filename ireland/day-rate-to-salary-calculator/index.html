@@ -88,29 +88,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="/assets/tokens.css">
 <style>
-:root{
-  --bg:#FAF6EE;          /* warm paper */
-  --ink:#10241C;          /* deep forest ink */
-  --muted:#5C6B63;
-  --card:#FFFFFF;
-  --line:#E6DECF;
-  --brand:#0E5C43;        /* emerald */
-  --brand-2:#0A3D2C;
-  --accent:#F2A900;       /* sharp amber accent */
-  --accent-soft:#FFF3D6;
-  --good:#11A36B;
-  --shadow:0 1px 2px rgba(16,36,28,.06),0 12px 30px -12px rgba(16,36,28,.22);
-  --radius:18px;
-}
-@media (prefers-color-scheme: dark){
-  :root{
-    --bg:#0B1410; --ink:#EAF2EC; --muted:#9BB0A6; --card:#11201A;
-    --line:#23362D; --brand:#36D399; --brand-2:#0E5C43; --accent:#F2A900;
-    --accent-soft:#2A2410; --good:#36D399;
-    --shadow:0 1px 2px rgba(0,0,0,.4),0 18px 40px -16px rgba(0,0,0,.6);
-  }
-}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
@@ -126,7 +105,7 @@ a:hover{text-decoration:underline}
 /* header */
 header{padding:22px 0;display:flex;align-items:center;justify-content:space-between}
 .logo{font-family:"Bricolage Grotesque";font-weight:800;font-size:1.25rem;letter-spacing:-.02em;color:var(--ink);display:flex;gap:8px;align-items:center}
-.logo .dot{width:11px;height:11px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.logo .dot{width:11px;height:11px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 4px var(--tint)}
 .logo a{color:var(--ink)}
 nav a{color:var(--muted);font-weight:500;margin-left:18px;font-size:.92rem}
 .crumbs{font-size:.86rem;color:var(--muted);padding:10px 0 0}
@@ -153,7 +132,7 @@ input[type=range]{width:100%;margin-top:12px;accent-color:var(--brand)}
 
 /* results */
 .results{display:flex;flex-direction:column;justify-content:center}
-.headline{background:linear-gradient(180deg,var(--brand) 0%,var(--brand-2) 100%);color:#fff;border-radius:14px;padding:22px;text-align:center;margin-bottom:14px}
+.headline{background:var(--brand-deep);color:#fff;border-radius:14px;padding:22px;text-align:center;margin-bottom:14px}
 .headline .k{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;opacity:.85}
 .headline .v{font-family:"Bricolage Grotesque";font-weight:800;font-size:clamp(2rem,7vw,2.9rem);letter-spacing:-.02em;line-height:1.05;margin-top:4px}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -202,9 +181,9 @@ footer{padding:30px 0 50px;color:var(--muted);font-size:.88rem;text-align:center
   .report{display:block}
   .report h2{font-family:Helvetica,Arial,sans-serif}
 }
-.report .rband{background:#0E5C43;color:#fff;padding:18px 22px;border-radius:10px}
+.report .rband{background:#0E7C6B;color:#fff;padding:18px 22px;border-radius:10px}
 .report .rrow{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #ddd}
-.report .rtot{font-weight:800;color:#0E5C43;border-bottom:0}
+.report .rtot{font-weight:800;color:#0E7C6B;border-bottom:0}
 </style>
 </head>
 
@@ -225,7 +204,7 @@ footer{padding:30px 0 50px;color:var(--muted);font-size:.88rem;text-align:center
   </nav>
 
   <!-- HERO + CALCULATOR -->
-  <svg role="img" aria-label="Day rate to salary calculator Ireland" width="48" height="48" viewBox="0 0 48 48" style="vertical-align:middle;margin-bottom:8px"><rect width="48" height="48" rx="12" fill="#0E5C43"/><text x="24" y="32" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="24" fill="#F2A900">€</text></svg>
+  <svg role="img" aria-label="Day rate to salary calculator Ireland" width="48" height="48" viewBox="0 0 48 48" style="vertical-align:middle;margin-bottom:8px"><rect width="48" height="48" rx="12" fill="#0E7C6B"/><text x="24" y="32" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="24" fill="#E59A52">€</text></svg>
   <span class="eyebrow">Ireland · 2026</span>
   <h1>Day Rate to Salary Calculator</h1>
   <p class="lede">Turn a contractor or freelancer day rate into the equivalent annual, monthly and weekly salary — then download a clean PDF report.</p>

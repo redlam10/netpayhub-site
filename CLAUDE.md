@@ -71,9 +71,16 @@ When in doubt, match the patterns already present in the existing files.
 
 - Fonts: **Bricolage Grotesque** (headings) + **Hanken Grotesk** (body). Avoid generic
   fonts (Inter, Roboto, Arial).
-- Use the existing CSS variables / color tokens (warm paper bg, deep emerald brand `#0E5C43`,
-  amber accent `#F2A900`, blue lock accent for privacy). Support **dark mode**
-  (`prefers-color-scheme`). Mobile-first.
+- **Colour tokens live in ONE place: `/assets/tokens.css`** (linked from every page). Never
+  hard-code palette hexes in a page — use the CSS variables. To change the palette, edit that file.
+  Current palette (teal brand + warm sand accent + blue privacy cue):
+  - Light: `--bg #F4F7F6` · `--surface #FFFFFF` · `--brand #0E7C6B` · `--brand-deep #0A5C50` ·
+    `--tint #E4F2EE` · `--accent #E59A52` · `--ink #1E2B2A` · `--muted #5C6B68` · `--border #E2EAE7`
+  - Dark: `--bg #0E1413` · `--surface #15201E` · `--brand #2BB89C` · `--ink #E8F0EE` ·
+    `--muted #9CB0AB` · `--border #26322F` · `--accent #E59A52`
+  - Aliases kept for legacy CSS: `--card`=surface, `--line`=border, `--brand-2`=brand-deep.
+  - The logo badge uses `--brand`; keep the blue lock/privacy cue (`--lock`/`--lock-soft`) clear.
+  - Support **dark mode** (`prefers-color-scheme`). Mobile-first. Ensure accessible contrast.
 - Page structure order: H1 → Quick Answer box → interactive tool (above the fold) →
   Save-as-PDF button → explanation/methodology → FAQ → related (existing) links → source/EEAT.
 
