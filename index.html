@@ -26,6 +26,7 @@
   "@context":"https://schema.org",
   "@graph":[
     {"@type":"Organization","@id":"https://netpayhub.com/#org","name":"NetPayHub","url":"https://netpayhub.com/",
+     "logo":"https://netpayhub.com/assets/netpayhub-icon.png",
      "description":"Privacy-first salary and tax calculators. Every calculation runs in the browser; your data never leaves your device.",
      "knowsAbout":["Irish income tax","PAYE","USC","PRSI","take-home pay","day rate","self-employed tax"]},
     {"@type":"WebSite","@id":"https://netpayhub.com/#site","url":"https://netpayhub.com/","name":"NetPayHub","publisher":{"@id":"https://netpayhub.com/#org"}}
@@ -122,6 +123,26 @@ footer a{color:var(--muted)}
       <div class="ic">⏰</div><b>Overtime Pay</b>
       <span>Overtime pay at 1.5× or 2× the hourly rate.</span>
     </a>
+    <a class="tool" href="/ireland/bonus-tax-calculator/">
+      <div class="ic">🎁</div><b>Bonus Tax</b>
+      <span>How much of a once-off bonus you keep after tax.</span>
+    </a>
+    <a class="tool" href="/ireland/freelance-tax-calculator-2026/">
+      <div class="ic">🧾</div><b>Freelance Tax</b>
+      <span>Self-employed take-home (Earned Income Credit, Class S).</span>
+    </a>
+    <a class="tool" href="/ireland/contract-vs-permanent-calculator/">
+      <div class="ic">⇄</div><b>Contract vs Permanent</b>
+      <span>Compare a contractor day rate against a salary.</span>
+    </a>
+    <a class="tool" href="/ireland/pension-tax-relief-calculator/">
+      <div class="ic">🐷</div><b>Pension Tax Relief</b>
+      <span>What a pension really costs your take-home.</span>
+    </a>
+    <a class="tool" href="/ireland/nurse-take-home-pay-calculator/">
+      <div class="ic">✚</div><b>Nurse Take-Home Pay</b>
+      <span>Net pay for typical nurse salaries.</span>
+    </a>
   </div>
 
   <h2>Why NetPayHub</h2>
@@ -137,18 +158,44 @@ footer a{color:var(--muted)}
     tax advice. Last updated: 29 May 2026.</p>
 
   <footer>
-    <nav aria-label="Footer links" style="display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;margin-bottom:10px">
-      <a href="/">Home</a>
-      <a href="/ireland/">Ireland</a>
-      <a href="/ireland/freelancers/">Freelancers</a>
-      <a href="/ireland/contractors/">Contractors</a>
-      <a href="/about/">About</a>
-      <a href="/methodology/">Methodology</a>
-      <a href="/editorial-policy/">Editorial Policy</a>
-      <a href="/privacy/">Privacy</a>
-      <a href="/terms/">Terms</a>
-      <a href="/disclaimer/">Disclaimer</a>
-      <a href="/how-we-protect-your-data/">How we protect your data</a>
+    <nav aria-label="Footer" class="foot-cols">
+      <div>
+        <b>Calculators</b>
+        <a href="/ireland/net-salary-calculator-2026/">Net salary calculator</a>
+        <a href="/ireland/day-rate-to-salary-calculator/">Day rate to salary</a>
+        <a href="/ireland/hourly-to-annual-salary-calculator/">Hourly to annual</a>
+        <a href="/ireland/annual-salary-to-hourly-calculator/">Salary to hourly</a>
+        <a href="/ireland/pro-rata-salary-calculator/">Pro rata salary</a>
+        <a href="/ireland/overtime-pay-calculator/">Overtime pay</a>
+        <a href="/ireland/bonus-tax-calculator/">Bonus tax</a>
+      </div>
+      <div>
+        <b>Self-employed &amp; compare</b>
+        <a href="/ireland/freelance-tax-calculator-2026/">Freelance tax calculator</a>
+        <a href="/ireland/freelance-hourly-rate-calculator/">Freelance hourly rate</a>
+        <a href="/ireland/contract-vs-permanent-calculator/">Contract vs permanent</a>
+        <a href="/ireland/pension-tax-relief-calculator/">Pension tax relief</a>
+        <a href="/ireland/nurse-take-home-pay-calculator/">Nurse take-home pay</a>
+      </div>
+      <div>
+        <b>Browse</b>
+        <a href="/">Home</a>
+        <a href="/ireland/">Ireland calculators</a>
+        <a href="/ireland/freelancers/">Freelancers</a>
+        <a href="/ireland/contractors/">Contractors</a>
+        <a href="/ireland/take-home-pay-by-profession/">Take-home by profession</a>
+        <a href="/ireland/salary-after-tax/">Salary after tax</a>
+      </div>
+      <div>
+        <b>About &amp; legal</b>
+        <a href="/about/">About</a>
+        <a href="/methodology/">Methodology</a>
+        <a href="/editorial-policy/">Editorial policy</a>
+        <a href="/how-we-protect-your-data/">How we protect your data</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+        <a href="/disclaimer/">Disclaimer</a>
+      </div>
     </nav>
     © <span id="yr"></span> NetPayHub · Estimates only — not financial advice.
   </footer>
