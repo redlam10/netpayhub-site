@@ -88,7 +88,7 @@
 <link rel="apple-touch-icon" href="/assets/netpayhub-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link id="npf" media="print" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><noscript><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 
 <link rel="stylesheet" href="/assets/tokens.css">
 <style>
@@ -187,6 +187,7 @@ footer{padding:30px 0 50px;color:var(--muted);font-size:.88rem;text-align:center
 .report .rrow{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #ddd}
 .report .rtot{font-weight:800;color:#0E7C6B;border-bottom:0}
 </style>
+<script src="/assets/fontswap.js" defer></script>
 </head>
 
 <body>
@@ -194,7 +195,7 @@ footer{padding:30px 0 50px;color:var(--muted);font-size:.88rem;text-align:center
 <div class="wrap" id="main">
 
   <header>
-    <a class="logo" href="/" aria-label="NetPayHub — home" style="text-decoration:none"><img src="/assets/netpayhub-icon.png" alt="" width="36" height="36" style="display:block;flex:0 0 auto"> NetPayHub</a>
+    <a class="logo" href="/" aria-label="NetPayHub — home" style="text-decoration:none"><img src="/assets/netpayhub-icon-72.png" alt="" width="36" height="36" style="display:block;flex:0 0 auto"> NetPayHub</a>
     <nav>
       <a href="/ireland/">Ireland</a>
       <a href="/ireland/freelancers/">Freelancers</a>
@@ -218,7 +219,7 @@ footer{padding:30px 0 50px;color:var(--muted);font-size:.88rem;text-align:center
       <div class="field">
         <label for="rate">Day rate <small>€ / day</small></label>
         <div class="num"><span class="sym">€</span><input id="rate" type="number" min="0" step="10" value="400" inputmode="decimal"></div>
-        <input id="rateRange" type="range" min="50" max="2000" step="10" value="400">
+        <input id="rateRange" type="range" aria-label="Adjust the amount" min="50" max="2000" step="10" value="400">
       </div>
 
       <div class="field">

@@ -47,3 +47,70 @@ footer .foot-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(150p
 footer .foot-cols b{display:block;font-family:"Bricolage Grotesque",sans-serif;color:var(--ink);font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px}
 footer .foot-cols a{display:block;color:var(--muted);font-size:.88rem;line-height:1.95;margin:0}
 footer .foot-cols a:hover{color:var(--brand);text-decoration:none}
+
+/* ============================================================
+   MOTION & POLISH — site-wide, pure CSS (CSP-safe), one file.
+   Hover effects always on; entrances/sheen respect reduced-motion.
+   ============================================================ */
+
+/* Frosted sticky header */
+header{position:sticky;top:0;z-index:50;
+  background:color-mix(in srgb, var(--bg) 82%, transparent);
+  -webkit-backdrop-filter:saturate(150%) blur(10px);
+  backdrop-filter:saturate(150%) blur(10px);
+  transition:box-shadow .25s ease}
+
+/* Animated logo + nav underline-grow (header only) */
+.logo img{transition:transform .25s cubic-bezier(.2,.7,.2,1)}
+.logo:hover img{transform:scale(1.08) rotate(-4deg)}
+header nav a{position:relative}
+header nav a::after{content:"";position:absolute;left:0;bottom:-3px;height:2px;width:0;border-radius:2px;background:var(--brand);transition:width .22s ease}
+header nav a:hover::after{width:100%}
+
+/* Hover micro-interactions */
+.tool{transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease}
+.tool:hover{transform:translateY(-3px)}
+.btn{transition:transform .12s ease, filter .15s ease, box-shadow .18s ease}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 10px 22px -10px color-mix(in srgb, var(--accent) 65%, transparent)}
+.chip{transition:transform .12s ease, border-color .15s ease, background .15s ease}
+.chip:hover{transform:translateY(-1px)}
+.related a{transition:transform .15s ease, border-color .15s ease, box-shadow .15s ease}
+.related a:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+
+/* Gradient footer accent */
+footer{position:relative;border-top:1px solid var(--line)}
+footer::before{content:"";position:absolute;top:-1px;left:0;right:0;height:2px;border-radius:2px;
+  background:linear-gradient(90deg, var(--brand), var(--accent))}
+footer .foot-cols a{transition:color .15s ease, transform .15s ease}
+footer .foot-cols a:hover{transform:translateX(3px)}
+
+@media (prefers-reduced-motion: no-preference){
+  /* gentle staggered fade-up on load (no layout shift — opacity+transform only) */
+  @keyframes nph-rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  .eyebrow,h1,.lede,.crumbs,.secbar,.answer,.calc{animation:nph-rise .55s cubic-bezier(.2,.7,.2,1) both}
+  h1{animation-delay:.06s}.lede{animation-delay:.12s}.crumbs{animation-delay:.04s}
+  .secbar{animation-delay:.18s}.answer{animation-delay:.18s}.calc{animation-delay:.22s}
+
+  /* moving light sheen across the result headline */
+  .headline{position:relative;overflow:hidden}
+  .headline::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.18) 50%,transparent 65%);
+    transform:translateX(-130%);animation:nph-sheen 6s ease-in-out 1.2s infinite}
+  @keyframes nph-sheen{0%,55%{transform:translateX(-130%)}75%,100%{transform:translateX(130%)}}
+
+  /* logo emblem soft idle float */
+  @keyframes nph-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+  .logo img{animation:nph-float 3.5s ease-in-out infinite}
+  .logo:hover img{animation:none}
+}
+
+/* ============================================================
+   ACCESSIBILITY hardening (AA contrast in light AND dark mode)
+   ============================================================ */
+/* "Coming soon" tag: was fixed brown (#7a5a00) → failed contrast in dark mode.
+   Theme-aware ink-on-tint passes AA in both modes. */
+.tool.soon{opacity:.7}
+.tool.soon em{background:var(--tint) !important;color:var(--ink) !important}
+/* Larger keyboard/touch focus ring for inputs, buttons, links */
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,.btn:focus-visible{
+  outline:3px solid var(--brand);outline-offset:2px;border-radius:6px}
