@@ -5,6 +5,20 @@
    Both the canonical names (--card, --line, --brand-2) and the palette
    aliases (--surface, --border, --brand-deep) are defined so either works.
    ============================================================ */
+/* Self-hosted variable fonts — ZERO external requests (CSP: font-src 'self').
+   Files in /assets/fonts/ (Fontsource variable, latin, weight axis).
+   font-display:swap → instant text in fallback, then swaps in (no blocking, no CLS). */
+@font-face{
+  font-family:"Hanken Grotesk";
+  font-style:normal;font-weight:400 700;font-display:swap;
+  src:url("/assets/fonts/hanken-grotesk.woff2") format("woff2");
+}
+@font-face{
+  font-family:"Bricolage Grotesque";
+  font-style:normal;font-weight:500 800;font-display:swap;
+  src:url("/assets/fonts/bricolage-grotesque.woff2") format("woff2");
+}
+
 :root{
   --bg:#F4F7F6;
   --surface:#FFFFFF; --card:#FFFFFF;
