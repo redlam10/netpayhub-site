@@ -1,0 +1,10 @@
+# 301 redirects — Cloudflare Workers static assets
+# SEO consolidation: dated/duplicate slugs -> canonical pages.
+
+# Take-home tool moved off the dated slug to the evergreen, higher-volume URL.
+/ireland/net-salary-calculator-2026/   /ireland/salary-after-tax/                  301
+/ireland/net-salary-calculator-2026    /ireland/salary-after-tax/                  301
+
+# Duplicate hourly<->annual converters merged into one.
+/ireland/hourly-to-annual-salary-calculator/   /ireland/annual-salary-to-hourly-calculator/   301
+/ireland/hourly-to-annual-salary-calculator    /ireland/annual-salary-to-hourly-calculator/   301

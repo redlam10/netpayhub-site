@@ -3,39 +3,79 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- =================================================================
+     SECURITY FIRST  (the #1 priority on every page)
+     ----------------------------------------------------------------
+     This Content-Security-Policy is the core privacy guarantee:
+       connect-src 'none'  -> the page CANNOT open any network connection,
+                              so a user's salary can never be sent anywhere.
+       form-action 'none'  -> no form can submit data off-page.
+       frame-ancestors 'none' -> cannot be embedded for clickjacking.
+     'unsafe-inline' is used here ONLY so this single demo file runs.
+     IN PRODUCTION: move the <script> to an external file + use a nonce,
+     drop 'unsafe-inline', and ALSO set these as real HTTP headers:
+       Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+       X-Content-Type-Options: nosniff
+       Referrer-Policy: no-referrer
+       Permissions-Policy: geolocation=(), camera=(), microphone=()
+     ================================================================= -->
 <meta http-equiv="Content-Security-Policy"
       content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'self'">
 <meta name="referrer" content="no-referrer" />
 
-<title>Salary After Tax in Ireland 2026 — Take-Home Pay</title>
-<meta name="description" content="Salary after tax in Ireland for 2026: take-home pay at common salary levels after income tax, USC and PRSI — calculate any amount instantly and privately." />
+<!-- SEO / META — change per page -->
+<title>Salary After Tax Ireland 2026 — Take-Home Pay</title>
+<meta name="description" content="Salary after tax Ireland 2026: see your take-home pay after income tax, USC and PRSI on Revenue's Budget 2026 bands. 100% private, in your browser." />
 <link rel="canonical" href="https://netpayhub.com/ireland/salary-after-tax/" />
 
+<!-- Social / Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="NetPayHub">
 <meta property="og:url" content="https://netpayhub.com/ireland/salary-after-tax/">
-<meta property="og:title" content="Salary After Tax in Ireland 2026 — Take-Home Pay">
-<meta property="og:description" content="Take-home pay at common salary levels in Ireland (2026) after income tax, USC and PRSI.">
+<meta property="og:title" content="Salary After Tax Ireland 2026 — Take-Home Pay">
+<meta property="og:description" content="Salary after tax Ireland 2026: take-home pay after income tax, USC and PRSI on Budget 2026 bands. 100% private, in your browser.">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Salary After Tax in Ireland 2026 — Take-Home Pay">
-<meta name="twitter:description" content="Take-home pay at common salary levels in Ireland (2026) after income tax, USC and PRSI.">
+<meta name="twitter:title" content="Salary After Tax Ireland 2026 — Take-Home Pay">
+<meta name="twitter:description" content="Salary after tax Ireland 2026: take-home pay after income tax, USC and PRSI. 100% private, in your browser.">
 
+<!-- =================================================================
+     STRUCTURED DATA — BreadcrumbList + WebApplication + FAQPage
+     Drives indexing, rich results, and AI / AI-Overview citations.
+     ================================================================= -->
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@graph":[
-    {"@type":"Organization","@id":"https://netpayhub.com/#org","name":"NetPayHub","url":"https://netpayhub.com/","description":"Privacy-first salary and tax calculators. Every calculation runs in the browser; your data never leaves your device."},
-    {"@type":"CollectionPage","@id":"https://netpayhub.com/ireland/salary-after-tax/#page","url":"https://netpayhub.com/ireland/salary-after-tax/","name":"Salary After Tax in Ireland","isPartOf":{"@id":"https://netpayhub.com/#site"},"description":"How salary is taxed in Ireland (2026) and take-home pay at common salary levels."},
-    {"@type":"BreadcrumbList","itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Home","item":"https://netpayhub.com/"},
-      {"@type":"ListItem","position":2,"name":"Ireland","item":"https://netpayhub.com/ireland/"},
-      {"@type":"ListItem","position":3,"name":"Salary after tax","item":"https://netpayhub.com/ireland/salary-after-tax/"}
-    ]},
-    {"@type":"FAQPage","mainEntity":[
-      {"@type":"Question","name":"What is €50,000 after tax in Ireland?","acceptedAnswer":{"@type":"Answer","text":"For a single person in 2026, €50,000 after tax is about €39,667 a year, or €3,306 a month, after income tax (€7,200), USC (€1,033) and PRSI (€2,100)."}},
-      {"@type":"Question","name":"How is salary taxed in Ireland in 2026?","acceptedAnswer":{"@type":"Answer","text":"Salary is taxed at 20% up to €44,000 (single) or €53,000 (married, one income) and 40% above, with €2,000 Personal and €2,000 Employee tax credits, plus USC (0.5%–8%) and PRSI at 4.2%."}},
-      {"@type":"Question","name":"Why is my take-home a smaller percentage as I earn more?","acceptedAnswer":{"@type":"Answer","text":"Ireland's tax is progressive: income above the cut-off is taxed at 40% and higher USC bands apply, so the effective rate rises with salary — from about 12% at €30,000 to about 35% at €100,000."}}
-    ]}
+    {
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://netpayhub.com/"},
+        {"@type":"ListItem","position":2,"name":"Ireland","item":"https://netpayhub.com/ireland/"},
+        {"@type":"ListItem","position":3,"name":"Salary After Tax","item":"https://netpayhub.com/ireland/salary-after-tax/"}
+      ]
+    },
+    {
+      "@type":"WebApplication",
+      "name":"Ireland Salary After Tax Calculator (2026)",
+      "applicationCategory":"FinanceApplication",
+      "operatingSystem":"Web",
+      "url":"https://netpayhub.com/ireland/salary-after-tax/",
+      "offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},
+      "featureList":"Take-home pay after income tax, USC and PRSI. Calculations run entirely in the browser; no data is transmitted or stored.",
+      "datePublished":"2026-01-15","dateModified":"2026-05-29"
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"How much is take-home pay on €50,000 in Ireland in 2026?",
+         "acceptedAnswer":{"@type":"Answer","text":"A single PAYE worker on €50,000 keeps roughly €39,667 per year (about €3,306 per month) after income tax (€7,200), USC (€1,033) and PRSI (€2,100), using Budget 2026 bands. Exact figures depend on your tax credits and any pension contributions."}},
+        {"@type":"Question","name":"What is the standard rate cut-off point in Ireland for 2026?",
+         "acceptedAnswer":{"@type":"Answer","text":"For a single person it is €44,000 in 2026: income up to €44,000 is taxed at 20% and the balance at 40%. For a married couple with one income it is €53,000. Budget 2026 left the bands unchanged from 2025."}},
+        {"@type":"Question","name":"Is my salary data safe in this calculator?",
+         "acceptedAnswer":{"@type":"Answer","text":"Yes. Every calculation runs locally in your browser. The page is configured so it cannot open any network connection (Content-Security-Policy connect-src 'none'), so your salary is never sent to a server, never stored, and never shared."}}
+      ]
+    }
   ]
 }
 </script>
@@ -46,57 +86,112 @@
 <link rel="stylesheet" href="/assets/tokens.css">
 <style>
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hanken Grotesk",system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;background-image:radial-gradient(120% 70% at 100% 0%,color-mix(in srgb,var(--brand) 9%,transparent),transparent 60%)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hanken Grotesk",system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;background-image:radial-gradient(120% 70% at 100% 0%,color-mix(in srgb,var(--brand) 9%,transparent),transparent 60%)}
 .wrap{max-width:920px;margin:0 auto;padding:0 20px}
 a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
+
 header{padding:20px 0;display:flex;align-items:center;justify-content:space-between}
 .logo{font-family:"Bricolage Grotesque";font-weight:800;font-size:1.25rem;letter-spacing:-.02em;color:var(--ink);display:flex;gap:8px;align-items:center}
 .logo .dot{width:11px;height:11px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 4px var(--tint)}
 nav a{color:var(--muted);font-weight:500;margin-left:16px;font-size:.9rem}
+
 .crumbs{font-size:.82rem;color:var(--muted);margin:6px 0 16px}
 .crumbs a{color:var(--muted)}.crumbs span{margin:0 6px}
+
 .eyebrow{display:inline-block;font-weight:600;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);background:color-mix(in srgb,var(--brand) 12%,transparent);padding:5px 12px;border-radius:999px}
 h1{font-family:"Bricolage Grotesque";font-weight:800;font-size:clamp(1.9rem,5.2vw,3rem);line-height:1.05;letter-spacing:-.03em;margin:.25em 0 .3em}
-.answer{margin:18px 0 8px;background:var(--accent-soft);border-left:4px solid var(--accent);border-radius:10px;padding:16px 18px;font-size:1.05rem;font-weight:500;max-width:72ch}
+.lede{font-size:1.06rem;color:var(--muted);max-width:62ch;margin:0 0 18px}
+
+/* SECURITY BADGE — the hero differentiator, placed before the inputs */
+.secbar{display:flex;align-items:center;gap:12px;background:var(--lock-soft);border:1px solid color-mix(in srgb,var(--lock) 30%,transparent);border-radius:14px;padding:13px 16px;margin:0 0 18px;font-weight:600;color:var(--ink)}
+.secbar .ic{flex:0 0 auto;width:34px;height:34px;border-radius:9px;background:var(--lock);color:#fff;display:grid;place-items:center;font-size:1.1rem}
+.secbar small{display:block;font-weight:500;color:var(--muted);font-size:.86rem}
+
+.calc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media(max-width:720px){.calc{grid-template-columns:1fr;padding:18px;gap:22px}}
+.field{margin-bottom:18px}
+.field label{display:flex;justify-content:space-between;align-items:baseline;font-weight:600;font-size:.95rem;margin-bottom:8px}
+.field label small{color:var(--muted);font-weight:500}
+.num{display:flex;align-items:center;border:1.5px solid var(--line);border-radius:12px;background:var(--bg);overflow:hidden;transition:border-color .15s}
+.num:focus-within{border-color:var(--brand)}
+.num .sym{padding:0 12px;color:var(--muted);font-weight:600}
+.num input{flex:1;border:0;background:transparent;color:var(--ink);font:inherit;font-weight:600;font-size:1.05rem;padding:12px 12px 12px 0;outline:none;width:100%}
+select{width:100%;border:1.5px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);font:inherit;font-weight:600;padding:12px;outline:none}
+select:focus{border-color:var(--brand)}
+input[type=range]{width:100%;margin-top:12px;accent-color:var(--brand)}
+
+.results{display:flex;flex-direction:column;justify-content:center}
+.headline{background:var(--brand-deep);color:#fff;border-radius:14px;padding:20px;text-align:center;margin-bottom:14px}
+.headline .k{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;opacity:.85}
+.headline .v{font-family:"Bricolage Grotesque";font-weight:800;font-size:clamp(1.9rem,6.5vw,2.7rem);letter-spacing:-.02em;line-height:1.05;margin-top:4px}
+.headline .sub{font-size:.9rem;opacity:.9;margin-top:4px}
+
+.brk{width:100%;border-collapse:collapse;margin-top:4px}
+.brk td{padding:9px 2px;border-bottom:1px solid var(--line);font-size:.95rem}
+.brk td:last-child{text-align:right;font-weight:700;font-family:"Bricolage Grotesque"}
+.brk tr.tot td{border-bottom:0;color:var(--brand);font-weight:800}
+.brk .tag{color:var(--muted);font-weight:500;font-size:.8rem}
+
+.btns{display:flex;gap:10px;margin-top:16px}
+.btn{flex:1;border:0;cursor:pointer;font:inherit;font-weight:700;padding:13px;border-radius:12px;transition:transform .08s,filter .15s}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--accent);color:#1a1300}.btn-primary:hover{filter:brightness(1.05)}
+.btn-ghost{background:transparent;color:var(--muted);border:1.5px solid var(--line)}
+
+.answer{margin:26px 0 0;background:var(--accent-soft);border-left:4px solid var(--accent);border-radius:10px;padding:16px 18px;font-size:1.05rem;font-weight:500}
 .answer b{font-weight:700}
-.secbar{display:inline-flex;align-items:center;gap:10px;background:var(--lock-soft);border:1px solid color-mix(in srgb,var(--lock) 30%,transparent);border-radius:999px;padding:9px 16px;font-weight:600;font-size:.9rem;color:var(--ink);margin-top:6px}
-h2{font-family:"Bricolage Grotesque";font-weight:700;font-size:1.5rem;letter-spacing:-.02em;margin:1.9em 0 .5em}
+
+section.prose{margin:44px 0}
+h2{font-family:"Bricolage Grotesque";font-weight:700;font-size:1.55rem;letter-spacing:-.02em;margin:0 0 .5em}
 h3{font-family:"Bricolage Grotesque";font-weight:700;font-size:1.12rem;margin:1.2em 0 .3em}
-p{color:var(--ink);max-width:70ch}
-.muted{color:var(--muted)}
-.bands{width:100%;border-collapse:collapse;margin:10px 0;font-size:.95rem;max-width:640px}
+.prose p{color:var(--ink);max-width:68ch}
+.bands{width:100%;border-collapse:collapse;margin:10px 0;font-size:.95rem}
 .bands th,.bands td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
 .bands th{background:color-mix(in srgb,var(--brand) 8%,transparent);font-weight:700}
-.extable{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95rem}
-.extable th,.extable td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:right}
-.extable th:first-child,.extable td:first-child{text-align:left}
-.extable th{background:color-mix(in srgb,var(--brand) 8%,transparent);font-weight:700}
-.extable td.net{font-family:"Bricolage Grotesque";font-weight:800;color:var(--brand)}
+
+.seccard{background:var(--lock-soft);border:1px solid color-mix(in srgb,var(--lock) 28%,transparent);border-radius:16px;padding:22px}
+.seccard h2{color:var(--ink)}
+.seclist{list-style:none;padding:0;margin:0}
+.seclist li{padding:8px 0 8px 30px;position:relative;color:var(--ink)}
+.seclist li::before{content:"🔒";position:absolute;left:0;top:7px;font-size:.95rem}
+
 details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:4px 18px;margin-bottom:10px}
 details summary{cursor:pointer;font-weight:700;padding:14px 0;list-style:none}
 details summary::-webkit-details-marker{display:none}
 details summary::after{content:"+";float:right;color:var(--brand);font-weight:800}
 details[open] summary::after{content:"\2013"}
 details p{padding-bottom:14px;margin:0;color:var(--muted)}
-.cta{display:inline-block;background:var(--accent);color:#1a1300;font-weight:700;padding:12px 18px;border-radius:12px;margin:6px 0}
-.cta:hover{filter:brightness(1.05);text-decoration:none}
-.related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:6px}
+
+.related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
 .related a{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;font-weight:600;color:var(--ink)}
 .related a:hover{border-color:var(--brand);text-decoration:none}
 .related a span{display:block;color:var(--muted);font-weight:500;font-size:.85rem;margin-top:3px}
+
 .meta-author{display:flex;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:26px}
 .meta-author .av{width:44px;height:44px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;font-weight:800;font-family:"Bricolage Grotesque"}
 .meta-author small{color:var(--muted)}
 .source{font-size:.9rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;margin-top:24px}
-footer{padding:34px 0 50px;color:var(--muted);font-size:.86rem;text-align:center;border-top:1px solid var(--line);margin-top:40px}
-footer a{color:var(--muted)}
+footer{padding:28px 0 50px;color:var(--muted);font-size:.86rem;text-align:center}
+
+/* ---- PRINT REPORT (native PDF, no third-party scripts) ---- */
+.report{display:none}
+@media print{
+  body{background:#fff;color:#000;background-image:none}
+  .no-print{display:none !important}
+  .report{display:block}
+  .report h2{font-family:Helvetica,Arial,sans-serif}
+}
+.report .rband{background:#0E7C6B;color:#fff;padding:18px 22px;border-radius:10px}
+.report .rrow{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #ddd}
+.report .rtot{font-weight:800;color:#0E7C6B;border-bottom:0}
 </style>
 </head>
+
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <main class="wrap" id="main">
 
-  <header>
+  <header class="no-print">
     <a class="logo" href="/" aria-label="NetPayHub — home" style="text-decoration:none"><img src="/assets/netpayhub-icon-72.png" alt="" width="36" height="36" style="display:block;flex:0 0 auto"> NetPayHub</a>
     <nav>
       <a href="/ireland/">Ireland</a>
@@ -105,86 +200,162 @@ footer a{color:var(--muted)}
     </nav>
   </header>
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a><span>›</span><a href="/ireland/">Ireland</a><span>›</span>Salary after tax
+  <nav class="crumbs no-print" aria-label="Breadcrumb">
+    <a href="/">Home</a><span>›</span><a href="/ireland/">Ireland</a><span>›</span>Salary After Tax
   </nav>
 
-  <svg role="img" aria-label="Salary after tax Ireland" width="48" height="48" viewBox="0 0 48 48" style="vertical-align:middle;margin-bottom:8px"><rect width="48" height="48" rx="12" fill="#0E7C6B"/><text x="24" y="33" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="24" fill="#E59A52">€</text></svg>
-  <span class="eyebrow">Ireland · 2026 · Revenue bands</span>
-  <h1>Salary after tax in Ireland (2026)</h1>
-  <div class="answer">
-    In Ireland, <b>salary after tax</b> is your gross pay minus income tax, USC and PRSI — for example
-    <b>€50,000</b> leaves about <b>€39,667</b> a year (<b>€3,306</b> a month) for a single person in 2026.
-  </div>
-  <span class="secbar">🔒 Our calculator runs in your browser — your salary is never sent or stored.</span>
+  <div class="no-print">
+    <svg role="img" aria-label="Net salary calculator Ireland" width="48" height="48" viewBox="0 0 48 48" style="vertical-align:middle;margin-bottom:8px"><rect width="48" height="48" rx="12" fill="#0E7C6B"/><text x="24" y="32" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="24" fill="#E59A52">€</text></svg>
+    <span class="eyebrow">Ireland · 2026 · Revenue bands</span>
+    <h1>Salary After Tax Ireland: Net Take-Home Pay (2026)</h1>
+    <p class="lede">See exactly what lands in your account after income tax, USC and PRSI — using Revenue's Budget 2026 bands. Built privacy-first.</p>
 
-  <h2>How salary is taxed in Ireland in 2026</h2>
-  <p>Three deductions come off gross pay before it reaches your account:</p>
-  <h3>Income tax (PAYE)</h3>
-  <table class="bands">
-    <tr><th>Status</th><th>20% band</th><th>40%</th></tr>
-    <tr><td>Single / widowed</td><td>First €44,000</td><td>Balance</td></tr>
-    <tr><td>Married, one income</td><td>First €53,000</td><td>Balance</td></tr>
-  </table>
-  <p>Then a <b>€2,000</b> Personal Tax Credit and <b>€2,000</b> Employee (PAYE) Tax Credit are subtracted.</p>
-  <h3>USC &amp; PRSI</h3>
-  <p>USC applies at <b>0.5%</b> to €12,012, <b>2%</b> to €28,700, <b>3%</b> to €70,044 and <b>8%</b> above
-    (exempt if total income ≤ €13,000). Class A <b>PRSI</b> is <b>4.2%</b> of gross pay. Full detail on the
-    <a href="/methodology/">methodology page</a>.</p>
-
-  <h2>Salary after tax in Ireland — examples (2026)</h2>
-  <p class="muted">Single person, no pension. Figures rounded; run your exact number through the calculator.</p>
-  <table class="extable">
-    <tr><th>Gross salary</th><th>Income tax</th><th>USC</th><th>PRSI</th><th>Take-home / yr</th><th>/ month</th><th>Effective</th></tr>
-    <tr><td>€30,000</td><td>€2,000</td><td>€433</td><td>€1,260</td><td class="net">€26,307</td><td>€2,192</td><td>12.3%</td></tr>
-    <tr><td>€40,000</td><td>€4,000</td><td>€733</td><td>€1,680</td><td class="net">€33,587</td><td>€2,799</td><td>16.0%</td></tr>
-    <tr><td>€50,000</td><td>€7,200</td><td>€1,033</td><td>€2,100</td><td class="net">€39,667</td><td>€3,306</td><td>20.7%</td></tr>
-    <tr><td>€60,000</td><td>€11,200</td><td>€1,333</td><td>€2,520</td><td class="net">€44,947</td><td>€3,746</td><td>25.1%</td></tr>
-    <tr><td>€70,000</td><td>€15,200</td><td>€1,633</td><td>€2,940</td><td class="net">€50,227</td><td>€4,186</td><td>28.2%</td></tr>
-    <tr><td>€80,000</td><td>€19,200</td><td>€2,431</td><td>€3,360</td><td class="net">€55,009</td><td>€4,584</td><td>31.2%</td></tr>
-    <tr><td>€100,000</td><td>€27,200</td><td>€4,031</td><td>€4,200</td><td class="net">€64,569</td><td>€5,381</td><td>35.4%</td></tr>
-  </table>
-  <p>Notice the <b>effective rate climbs with salary</b> (≈12% at €30k → ≈35% at €100k) because income
-    over the cut-off is taxed at 40% and the higher USC bands kick in.</p>
-
-  <h2>Calculate any salary after tax</h2>
-  <p>For your exact figure — including a different tax status or a pension contribution — use the full tool:</p>
-  <p><a class="cta" href="/ireland/net-salary-calculator-2026/">Open the net salary calculator →</a></p>
-  <p class="muted">Dedicated "€X after tax" amount pages (e.g. €40,000, €60,000) are being added — for now,
-    the calculator covers every amount instantly and privately.</p>
-
-  <h2>Frequently asked questions</h2>
-  <details open><summary>What is €50,000 after tax in Ireland?</summary>
-    <p>For a single person in 2026, about €39,667 a year (€3,306/month) after income tax (€7,200), USC (€1,033) and PRSI (€2,100).</p></details>
-  <details><summary>How is salary taxed in Ireland in 2026?</summary>
-    <p>20% up to €44,000 (single) / €53,000 (married, one income), 40% above, with €2,000 + €2,000 credits, plus USC (0.5%–8%) and PRSI at 4.2%.</p></details>
-  <details><summary>Why is take-home a smaller share as I earn more?</summary>
-    <p>Tax is progressive: income above the cut-off is taxed at 40% and higher USC bands apply, so the effective rate rises from ~12% at €30k to ~35% at €100k.</p></details>
-
-  <h2>Related</h2>
-  <div class="related">
-    <a href="/ireland/net-salary-calculator-2026/">Net salary calculator <span>Any salary, full breakdown</span></a>
-    <a href="/ireland/take-home-pay-by-profession/">Take-home pay by profession <span>Net pay per job</span></a>
-    <a href="/ireland/">All Ireland calculators <span>Browse the hub</span></a>
+    <!-- SECURITY BADGE -->
+    <div class="secbar" role="note">
+      <div class="ic" aria-hidden="true">🔒</div>
+      <div>100% private — your salary never leaves your browser.
+        <small>All maths runs locally. This page is blocked from sending data anywhere (no servers, no tracking, no storage).</small>
+      </div>
+    </div>
   </div>
 
-  <div class="meta-author">
-    <div class="av">NP</div>
-    <div><b>Reviewed by the NetPayHub editorial team</b><br>
-      <small>Figures sourced from Revenue.ie and Budget 2026. Last updated: 29 May 2026.</small></div>
-  </div>
-  <p class="source">Sources: <a href="https://www.revenue.ie" rel="nofollow">revenue.ie</a>, Budget 2026 (gov.ie). Examples are estimates for a single person with no pension and standard credits; not tax advice. Verify your position with Revenue.</p>
+  <!-- CALCULATOR -->
+  <div class="calc no-print">
+    <div class="inputs">
+      <div class="field">
+        <label for="gross">Gross annual salary <small>€ / year</small></label>
+        <div class="num"><span class="sym">€</span><input id="gross" type="number" min="0" step="1000" value="50000" inputmode="decimal"></div>
+        <input id="grossRange" type="range" aria-label="Adjust the amount" min="15000" max="150000" step="1000" value="50000">
+      </div>
+      <div class="field">
+        <label for="status">Tax status</label>
+        <select id="status">
+          <option value="single" selected>Single / widowed</option>
+          <option value="married1">Married — one income</option>
+        </select>
+      </div>
+      <div class="field" style="margin-bottom:0">
+        <label for="pension">Pension contribution <small>% of salary (optional)</small></label>
+        <div class="num"><input id="pension" type="number" min="0" max="40" step="1" value="0" inputmode="numeric"><span class="sym">%</span></div>
+      </div>
+    </div>
 
-  <footer>
+    <div class="results">
+      <div class="headline">
+        <div class="k">Take-home pay</div>
+        <div class="v" id="netAnnual">€39,667</div>
+        <div class="sub" id="netMonthly">€3,306 / month</div>
+      </div>
+      <table class="brk" aria-label="Deductions breakdown">
+        <tr><td>Income tax <span class="tag">PAYE</span></td><td id="it">€7,200</td></tr>
+        <tr><td>USC</td><td id="usc">€1,033</td></tr>
+        <tr><td>PRSI <span class="tag">4.2%</span></td><td id="prsi">€2,100</td></tr>
+        <tr class="tot"><td>Net annual <span class="tag" id="effrate">20.7% effective rate</span></td><td id="net2">€39,667</td></tr>
+      </table>
+      <div class="btns">
+        <button class="btn btn-primary" id="pdf">⬇ Save as PDF report</button>
+        <button class="btn btn-ghost" id="reset">Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- GEO DIRECT ANSWER (dynamic, near top of text) -->
+  <p class="answer no-print" id="answerLine">A <b>€50,000</b> single salary in Ireland gives about <b>€39,667</b> take-home per year (<b>€3,306</b>/month) after income tax (€7,200), USC (€1,033) and PRSI (€2,100) in 2026.</p>
+
+  <!-- SECURITY & PRIVACY (the #1 priority, fully explained) -->
+  <section class="prose no-print">
+    <div class="seccard">
+      <h2>Your data, locked down</h2>
+      <p style="color:var(--muted);margin-top:0">Salary is sensitive. This tool is engineered so your numbers physically cannot leave this page:</p>
+      <ul class="seclist">
+        <li><b>Calculated in your browser.</b> The tax maths runs in JavaScript on your device — nothing is sent to a server to be computed.</li>
+        <li><b>No network connection allowed.</b> A Content-Security-Policy (<code>connect-src 'none'</code>) blocks the page from making any outbound request, so your salary can't be transmitted even by accident.</li>
+        <li><b>Nothing stored.</b> No cookies, no local storage of your figures, no account. Refresh the page and it's gone.</li>
+        <li><b>No tracking, no ads watching your inputs.</b> Served over HTTPS with strict security headers.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- METHODOLOGY / EEAT -->
+  <section class="prose no-print">
+    <h2>How this net salary calculator works (2026)</h2>
+    <p>Ireland uses a progressive system. Three deductions come off your gross salary: <b>income tax (PAYE)</b>, the <b>Universal Social Charge (USC)</b> and <b>PRSI</b>. Here are the 2026 figures this calculator uses, confirmed in Budget 2026.</p>
+
+    <h3>Income tax (PAYE)</h3>
+    <table class="bands">
+      <tr><th>Status</th><th>20% band</th><th>40%</th></tr>
+      <tr><td>Single / widowed</td><td>First €44,000</td><td>Balance</td></tr>
+      <tr><td>Married, one income</td><td>First €53,000</td><td>Balance</td></tr>
+    </table>
+    <p>Tax credits are then subtracted: a <b>€2,000</b> Personal Tax Credit plus the <b>€2,000</b> Employee (PAYE) Tax Credit for a single employee. Budget 2026 left bands and credits unchanged from 2025.</p>
+
+    <h3>Universal Social Charge (USC)</h3>
+    <table class="bands">
+      <tr><th>Band</th><th>Rate</th></tr>
+      <tr><td>Up to €12,012</td><td>0.5%</td></tr>
+      <tr><td>€12,012 – €28,700</td><td>2%</td></tr>
+      <tr><td>€28,700 – €70,044</td><td>3%</td></tr>
+      <tr><td>Balance</td><td>8%</td></tr>
+    </table>
+    <p>Budget 2026 widened the 2% band ceiling to €28,700. Total income at or below €13,000 is exempt from USC. USC is charged on gross income and is not reduced by tax credits or pension contributions.</p>
+
+    <h3>PRSI</h3>
+    <p>Class A employee PRSI is <b>4.2%</b> of gross pay for most of 2026, rising to <b>4.35%</b> from 1 October 2026. This tool uses 4.2% as the headline rate; weekly earnings of €352 or less are exempt.</p>
+
+    <p style="color:var(--muted);font-size:.92rem">Note: this is an estimate for a standard PAYE employee. It doesn't model every relief (e.g. medical-card USC reduction, BIK, additional credits, or two-income couple band capping). Pension % is applied to the income-tax base only.</p>
+  </section>
+
+  <!-- FAQ / AEO (mirrors JSON-LD) -->
+  <section class="prose no-print">
+    <h2>People also ask</h2>
+    <details open>
+      <summary>How much is take-home pay on €50,000 in Ireland in 2026?</summary>
+      <p>A single PAYE worker on €50,000 keeps roughly €39,667 a year (about €3,306/month) after income tax (€7,200), USC (€1,033) and PRSI (€2,100). Pension contributions or extra credits change this.</p>
+    </details>
+    <details>
+      <summary>What is the standard rate cut-off point for 2026?</summary>
+      <p>€44,000 for a single person — income up to €44,000 is taxed at 20%, the rest at 40%. It's €53,000 for a married couple with one income.</p>
+    </details>
+    <details>
+      <summary>Is my salary data safe in this calculator?</summary>
+      <p>Yes. All calculation happens in your browser, and a Content-Security-Policy blocks the page from sending any data out. Your salary is never transmitted, stored or shared.</p>
+    </details>
+  </section>
+
+  <!-- INTERNAL LINKS -->
+  <section class="prose no-print">
+    <h2>Related Ireland calculators</h2>
+    <div class="related">
+      <a href="/ireland/day-rate-to-salary-calculator/">Day rate to salary calculator <span>For contractors</span></a>
+      <a href="/ireland/annual-salary-to-hourly-calculator/">Hourly to annual calculator <span>From an hourly rate</span></a>
+      <a href="/ireland/annual-salary-to-hourly-calculator/">Salary to hourly calculator <span>Find your hourly rate</span></a>
+      <a href="/ireland/pro-rata-salary-calculator/">Pro rata salary calculator <span>For part-time hours</span></a>
+      <a href="/ireland/overtime-pay-calculator/">Overtime pay calculator <span>1.5× and 2× rates</span></a>
+      <a href="/ireland/">All Ireland calculators <span>Browse the hub</span></a>
+    </div>
+
+    <!-- EEAT author + freshness -->
+    <div class="meta-author">
+      <div class="av">NP</div>
+      <div>
+        <b>Reviewed by the NetPayHub editorial team</b><br>
+        <small>Figures sourced from Revenue.ie and Budget 2026. Last updated: 29 May 2026.</small>
+      </div>
+    </div>
+
+    <p class="source">Sources: <a href="https://www.revenue.ie" rel="nofollow">revenue.ie</a>, Budget 2026 (gov.ie). This calculator gives estimates for planning only and is not tax advice. Verify your exact position with Revenue or a qualified adviser.</p>
+  </section>
+
+  <footer class="no-print">
     <nav aria-label="Footer" class="foot-cols">
       <div>
         <b>Calculators</b>
-        <a href="/ireland/net-salary-calculator-2026/">Net salary calculator</a>
+        <a href="/ireland/salary-after-tax/">Net salary calculator</a>
         <a href="/ireland/income-tax-calculator/">Income tax calculator</a>
         <a href="/ireland/usc-calculator/">USC calculator</a>
         <a href="/ireland/prsi-calculator/">PRSI calculator</a>
         <a href="/ireland/day-rate-to-salary-calculator/">Day rate to salary</a>
-        <a href="/ireland/hourly-to-annual-salary-calculator/">Hourly to annual</a>
+        <a href="/ireland/annual-salary-to-hourly-calculator/">Hourly to annual</a>
         <a href="/ireland/annual-salary-to-hourly-calculator/">Salary to hourly</a>
         <a href="/ireland/pro-rata-salary-calculator/">Pro rata salary</a>
         <a href="/ireland/overtime-pay-calculator/">Overtime pay</a>
@@ -220,7 +391,11 @@ footer a{color:var(--muted)}
     </nav>
     © <span id="yr"></span> NetPayHub · Estimates only — not financial advice.
   </footer>
+
+  <!-- HIDDEN PRINT REPORT (filled by JS before printing; no external libs) -->
+  <div class="report" id="report"></div>
 </main>
-<script src="/assets/yr.js" defer></script>
+
+<script src="app.js" defer></script>
 </body>
 </html>

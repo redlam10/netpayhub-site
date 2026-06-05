@@ -130,10 +130,9 @@ When in doubt, match the patterns already present in the existing files.
 - **Focus-keyword map** (the single target keyword per page — do not reuse):
   - `/` → "Ireland salary calculator"
   - `/ireland/` → "Ireland salary and tax calculators"
-  - `/ireland/net-salary-calculator-2026/` → "net salary calculator Ireland"
+  - `/ireland/salary-after-tax/` → "salary after tax Ireland"  (canonical take-home / net-salary tool; the dated `/net-salary-calculator-2026/` slug 301-redirects here — do NOT recreate it)
   - `/ireland/day-rate-to-salary-calculator/` → "day rate to salary calculator Ireland"
-  - `/ireland/hourly-to-annual-salary-calculator/` → "hourly to annual salary Ireland"
-  - `/ireland/annual-salary-to-hourly-calculator/` → "salary to hourly calculator Ireland"
+  - `/ireland/annual-salary-to-hourly-calculator/` → "salary to hourly calculator Ireland" (also targets "hourly to annual salary"; the old `/hourly-to-annual-salary-calculator/` slug 301-redirects here — do NOT recreate it)
   - `/ireland/freelance-hourly-rate-calculator/` → "freelance hourly rate calculator Ireland"
   - `/ireland/pro-rata-salary-calculator/` → "pro rata salary calculator Ireland"
   - `/ireland/overtime-pay-calculator/` → "overtime pay calculator Ireland"
