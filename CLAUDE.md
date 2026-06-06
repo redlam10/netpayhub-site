@@ -138,5 +138,8 @@ When in doubt, match the patterns already present in the existing files.
   - `/ireland/overtime-pay-calculator/` → "overtime pay calculator Ireland"
   - `/ireland/freelancers/` → "freelancer calculators Ireland"
   - `/ireland/contractors/` → "contractor calculators Ireland"
+  - `/ireland/emergency-tax-calculator/` → "emergency tax calculator Ireland"
+  - `/ireland/net-to-gross-calculator/` → "net to gross salary calculator Ireland"
+  - `/ireland/teacher-take-home-pay-calculator/` → "teacher take home pay calculator Ireland"
   - about, methodology, editorial-policy, privacy, terms, disclaimer: optimize titles/meta/
     headings only; keep indexable but low sitemap priority — NOT keyword targets.
