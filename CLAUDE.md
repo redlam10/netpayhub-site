@@ -141,5 +141,7 @@ When in doubt, match the patterns already present in the existing files.
   - `/ireland/emergency-tax-calculator/` → "emergency tax calculator Ireland"
   - `/ireland/net-to-gross-calculator/` → "net to gross salary calculator Ireland"
   - `/ireland/teacher-take-home-pay-calculator/` → "teacher take home pay calculator Ireland"
+  - `/ireland/minimum-wage-calculator/` → "minimum wage Ireland 2026"
+  - `/ireland/rent-tax-credit-calculator/` → "rent tax credit calculator Ireland"
   - about, methodology, editorial-policy, privacy, terms, disclaimer: optimize titles/meta/
     headings only; keep indexable but low sitemap priority — NOT keyword targets.
