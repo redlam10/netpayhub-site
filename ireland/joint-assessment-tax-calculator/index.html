@@ -4,45 +4,23 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<!-- =================================================================
-     SECURITY FIRST  (the #1 priority on every page)
-     ----------------------------------------------------------------
-     This Content-Security-Policy is the core privacy guarantee:
-       connect-src 'none'  -> the page CANNOT open any network connection,
-                              so a user's salary can never be sent anywhere.
-       form-action 'none'  -> no form can submit data off-page.
-       frame-ancestors 'none' -> cannot be embedded for clickjacking.
-     'unsafe-inline' is used here ONLY so this single demo file runs.
-     IN PRODUCTION: move the <script> to an external file + use a nonce,
-     drop 'unsafe-inline', and ALSO set these as real HTTP headers:
-       Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
-       X-Content-Type-Options: nosniff
-       Referrer-Policy: no-referrer
-       Permissions-Policy: geolocation=(), camera=(), microphone=()
-     ================================================================= -->
 <meta http-equiv="Content-Security-Policy"
       content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'self'">
 <meta name="referrer" content="no-referrer" />
 
-<!-- SEO / META — change per page -->
-<title>Salary After Tax Ireland 2026 — Take-Home Pay</title>
-<meta name="description" content="Salary after tax Ireland 2026: see your take-home pay after income tax, USC and PRSI on Revenue's Budget 2026 bands. 100% private, in your browser." />
-<link rel="canonical" href="https://netpayhub.com/ireland/salary-after-tax/" />
+<title>Joint Assessment Tax Calculator Ireland (2026)</title>
+<meta name="description" content="Joint assessment tax calculator Ireland 2026: a married couple's combined take-home pay after tax, USC and PRSI — and what you save vs separate assessment. 100% private." />
+<link rel="canonical" href="https://netpayhub.com/ireland/joint-assessment-tax-calculator/" />
 
-<!-- Social / Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="NetPayHub">
-<meta property="og:url" content="https://netpayhub.com/ireland/salary-after-tax/">
-<meta property="og:title" content="Salary After Tax Ireland 2026 — Take-Home Pay">
-<meta property="og:description" content="Salary after tax Ireland 2026: take-home pay after income tax, USC and PRSI on Budget 2026 bands. 100% private, in your browser.">
+<meta property="og:url" content="https://netpayhub.com/ireland/joint-assessment-tax-calculator/">
+<meta property="og:title" content="Joint Assessment Tax Calculator Ireland (2026)">
+<meta property="og:description" content="A married couple's combined take-home pay under joint assessment — and how much the shared tax band saves you. Ireland 2026, 100% private.">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Salary After Tax Ireland 2026 — Take-Home Pay">
-<meta name="twitter:description" content="Salary after tax Ireland 2026: take-home pay after income tax, USC and PRSI. 100% private, in your browser.">
+<meta name="twitter:title" content="Joint Assessment Tax Calculator Ireland (2026)">
+<meta name="twitter:description" content="Married couple combined take-home pay in Ireland 2026, and your saving vs separate assessment.">
 
-<!-- =================================================================
-     STRUCTURED DATA — BreadcrumbList + WebApplication + FAQPage
-     Drives indexing, rich results, and AI / AI-Overview citations.
-     ================================================================= -->
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -52,28 +30,30 @@
       "itemListElement":[
         {"@type":"ListItem","position":1,"name":"Home","item":"https://netpayhub.com/"},
         {"@type":"ListItem","position":2,"name":"Ireland","item":"https://netpayhub.com/ireland/"},
-        {"@type":"ListItem","position":3,"name":"Salary After Tax","item":"https://netpayhub.com/ireland/salary-after-tax/"}
+        {"@type":"ListItem","position":3,"name":"Joint Assessment Tax Calculator","item":"https://netpayhub.com/ireland/joint-assessment-tax-calculator/"}
       ]
     },
     {
       "@type":"WebApplication",
-      "name":"Ireland Salary After Tax Calculator (2026)",
+      "name":"Ireland Joint Assessment Tax Calculator (2026)",
       "applicationCategory":"FinanceApplication",
       "operatingSystem":"Web",
-      "url":"https://netpayhub.com/ireland/salary-after-tax/",
+      "url":"https://netpayhub.com/ireland/joint-assessment-tax-calculator/",
       "offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},
-      "featureList":"Take-home pay after income tax, USC and PRSI. Calculations run entirely in the browser; no data is transmitted or stored.",
-      "datePublished":"2026-01-15","dateModified":"2026-05-29"
+      "featureList":"Combined take-home pay for a jointly assessed married couple in Ireland 2026, with the saving versus separate assessment. Calculations run entirely in the browser; no data is transmitted or stored.",
+      "datePublished":"2026-06-08","dateModified":"2026-06-08"
     },
     {
       "@type":"FAQPage",
       "mainEntity":[
-        {"@type":"Question","name":"How much is take-home pay on €50,000 in Ireland in 2026?",
-         "acceptedAnswer":{"@type":"Answer","text":"A single PAYE worker on €50,000 keeps roughly €39,667 per year (about €3,306 per month) after income tax (€7,200), USC (€1,033) and PRSI (€2,100), using Budget 2026 bands. Exact figures depend on your tax credits and any pension contributions."}},
-        {"@type":"Question","name":"What is the standard rate cut-off point in Ireland for 2026?",
-         "acceptedAnswer":{"@type":"Answer","text":"For a single person it is €44,000 in 2026: income up to €44,000 is taxed at 20% and the balance at 40%. For a married couple with one income it is €53,000. Budget 2026 left the bands unchanged from 2025."}},
-        {"@type":"Question","name":"Is my salary data safe in this calculator?",
-         "acceptedAnswer":{"@type":"Answer","text":"Yes. Every calculation runs locally in your browser. The page is configured so it cannot open any network connection (Content-Security-Policy connect-src 'none'), so your salary is never sent to a server, never stored, and never shared."}}
+        {"@type":"Question","name":"Is joint assessment better in Ireland?",
+         "acceptedAnswer":{"@type":"Answer","text":"Usually, yes — especially when the two incomes are different, because one spouse can use part of the other's standard rate band. For example, a couple on €55,000 and €30,000 keeps about €1,800 a year more under joint assessment than if taxed as two single people. Two equal higher earners often see no difference, as each already uses their full band."}},
+        {"@type":"Question","name":"How does the married tax band work in 2026?",
+         "acceptedAnswer":{"@type":"Answer","text":"For a jointly assessed couple the 20% standard rate band is €53,000, increased by the lower of €35,000 or the lower earner's income — up to a maximum of €88,000 taxed at 20%. The €35,000 increase is not transferable between spouses; it can only be used by the spouse who earned it."}},
+        {"@type":"Question","name":"Do USC and PRSI change under joint assessment?",
+         "acceptedAnswer":{"@type":"Answer","text":"No. Only income tax is jointly assessed. USC and PRSI are always calculated individually on each spouse's own income, so joint assessment does not change them."}},
+        {"@type":"Question","name":"Do married couples pay less tax in Ireland?",
+         "acceptedAnswer":{"@type":"Answer","text":"They can. Joint assessment lets a couple share the €53,000 standard rate band and combine their tax credits (€4,000 personal plus €2,000 Employee credit per earner), which usually lowers the total tax when incomes are unequal. The benefit shrinks to nothing when both partners already earn above the band individually."}}
       ]
     }
   ]
@@ -102,7 +82,6 @@ nav a{color:var(--muted);font-weight:500;margin-left:16px;font-size:.9rem}
 h1{font-family:"Bricolage Grotesque";font-weight:800;font-size:clamp(1.9rem,5.2vw,3rem);line-height:1.05;letter-spacing:-.03em;margin:.25em 0 .3em}
 .lede{font-size:1.06rem;color:var(--muted);max-width:62ch;margin:0 0 18px}
 
-/* SECURITY BADGE — the hero differentiator, placed before the inputs */
 .secbar{display:flex;align-items:center;gap:12px;background:var(--lock-soft);border:1px solid color-mix(in srgb,var(--lock) 30%,transparent);border-radius:14px;padding:13px 16px;margin:0 0 18px;font-weight:600;color:var(--ink)}
 .secbar .ic{flex:0 0 auto;width:34px;height:34px;border-radius:9px;background:var(--lock);color:#fff;display:grid;place-items:center;font-size:1.1rem}
 .secbar small{display:block;font-weight:500;color:var(--muted);font-size:.86rem}
@@ -116,9 +95,6 @@ h1{font-family:"Bricolage Grotesque";font-weight:800;font-size:clamp(1.9rem,5.2v
 .num:focus-within{border-color:var(--brand)}
 .num .sym{padding:0 12px;color:var(--muted);font-weight:600}
 .num input{flex:1;border:0;background:transparent;color:var(--ink);font:inherit;font-weight:600;font-size:1.05rem;padding:12px 12px 12px 0;outline:none;width:100%}
-select{width:100%;border:1.5px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);font:inherit;font-weight:600;padding:12px;outline:none}
-select:focus{border-color:var(--brand)}
-input[type=range]{width:100%;margin-top:12px;accent-color:var(--brand)}
 
 .results{display:flex;flex-direction:column;justify-content:center}
 .headline{background:var(--brand-deep);color:#fff;border-radius:14px;padding:20px;text-align:center;margin-bottom:14px}
@@ -131,6 +107,11 @@ input[type=range]{width:100%;margin-top:12px;accent-color:var(--brand)}
 .brk td:last-child{text-align:right;font-weight:700;font-family:"Bricolage Grotesque"}
 .brk tr.tot td{border-bottom:0;color:var(--brand);font-weight:800}
 .brk .tag{color:var(--muted);font-weight:500;font-size:.8rem}
+
+.savebox{background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);border-radius:14px;padding:14px 16px;margin-top:12px;text-align:center}
+.savebox .k{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.savebox .v{font-family:"Bricolage Grotesque";font-weight:800;font-size:1.6rem;color:var(--ink);margin-top:2px}
+.savebox .sub{font-size:.82rem;color:var(--muted);margin-top:2px}
 
 .btns{display:flex;gap:10px;margin-top:16px}
 .btn{flex:1;border:0;cursor:pointer;font:inherit;font-weight:700;padding:13px;border-radius:12px;transition:transform .08s,filter .15s}
@@ -173,7 +154,6 @@ details p{padding-bottom:14px;margin:0;color:var(--muted)}
 .source{font-size:.9rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;margin-top:24px}
 footer{padding:28px 0 50px;color:var(--muted);font-size:.86rem;text-align:center}
 
-/* ---- PRINT REPORT (native PDF, no third-party scripts) ---- */
 .report{display:none}
 @media print{
   body{background:#fff;color:#000;background-image:none}
@@ -201,19 +181,18 @@ footer{padding:28px 0 50px;color:var(--muted);font-size:.86rem;text-align:center
   </header>
 
   <nav class="crumbs no-print" aria-label="Breadcrumb">
-    <a href="/">Home</a><span>›</span><a href="/ireland/">Ireland</a><span>›</span>Salary After Tax
+    <a href="/">Home</a><span>›</span><a href="/ireland/">Ireland</a><span>›</span>Joint Assessment Tax Calculator
   </nav>
 
   <div class="no-print">
-    <svg role="img" aria-label="Net salary calculator Ireland" width="48" height="48" viewBox="0 0 48 48" style="vertical-align:middle;margin-bottom:8px"><rect width="48" height="48" rx="12" fill="#0E7C6B"/><text x="24" y="32" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="24" fill="#E59A52">€</text></svg>
-    <span class="eyebrow">Ireland · 2026 · Revenue bands</span>
-    <h1>Salary After Tax Ireland: Net Take-Home Pay (2026)</h1>
-    <p class="lede">See exactly what lands in your account after income tax, USC and PRSI — using Revenue's Budget 2026 bands. Built privacy-first.</p>
+    <svg role="img" aria-label="Joint assessment tax calculator Ireland" width="48" height="48" viewBox="0 0 48 48" style="vertical-align:middle;margin-bottom:8px"><rect width="48" height="48" rx="12" fill="#0E7C6B"/><text x="24" y="32" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="24" fill="#E59A52">€</text></svg>
+    <span class="eyebrow">Ireland · 2026 · Married couples</span>
+    <h1>Joint Assessment Tax Calculator Ireland (2026)</h1>
+    <p class="lede">See a married couple's combined take-home pay under joint assessment — and how much the shared standard-rate band saves you compared with being taxed as two single people.</p>
 
-    <!-- SECURITY BADGE -->
     <div class="secbar" role="note">
       <div class="ic" aria-hidden="true">🔒</div>
-      <div>100% private — your salary never leaves your browser.
+      <div>100% private — your incomes never leave your browser.
         <small>All maths runs locally. This page is blocked from sending data anywhere (no servers, no tracking, no storage).</small>
       </div>
     </div>
@@ -223,35 +202,33 @@ footer{padding:28px 0 50px;color:var(--muted);font-size:.86rem;text-align:center
   <div class="calc no-print">
     <div class="inputs">
       <div class="field">
-        <label for="gross">Gross annual salary <small>€ / year</small></label>
-        <div class="num"><span class="sym">€</span><input id="gross" type="number" min="0" step="1000" value="50000" inputmode="decimal"></div>
-        <input id="grossRange" type="range" aria-label="Adjust the amount" min="15000" max="150000" step="1000" value="50000">
-      </div>
-      <div class="field">
-        <label for="status">Tax status</label>
-        <select id="status">
-          <option value="single" selected>Single / widowed</option>
-          <option value="married1">Married — one income</option>
-        </select>
+        <label for="inc1">Spouse 1 gross income <small>€ / year</small></label>
+        <div class="num"><span class="sym">€</span><input id="inc1" type="number" min="0" step="1000" value="55000" inputmode="decimal"></div>
       </div>
       <div class="field" style="margin-bottom:0">
-        <label for="pension">Pension contribution <small>% of salary (optional)</small></label>
-        <div class="num"><input id="pension" type="number" min="0" max="40" step="1" value="0" inputmode="numeric"><span class="sym">%</span></div>
+        <label for="inc2">Spouse 2 gross income <small>€ / year (0 if one income)</small></label>
+        <div class="num"><span class="sym">€</span><input id="inc2" type="number" min="0" step="1000" value="30000" inputmode="decimal"></div>
       </div>
     </div>
 
     <div class="results">
       <div class="headline">
-        <div class="k">Take-home pay</div>
-        <div class="v" id="netAnnual">€39,667</div>
-        <div class="sub" id="netMonthly">€3,306 / month</div>
+        <div class="k">Combined take-home</div>
+        <div class="v" id="netAnnual">€70,414</div>
+        <div class="sub" id="netMonthly">€5,868 / month combined</div>
       </div>
-      <table class="brk" aria-label="Deductions breakdown">
-        <tr><td>Income tax <span class="tag">PAYE</span></td><td id="it">€7,200</td></tr>
-        <tr><td>USC</td><td id="usc">€1,033</td></tr>
-        <tr><td>PRSI <span class="tag">4.2%</span></td><td id="prsi">€2,100</td></tr>
-        <tr class="tot"><td>Net annual <span class="tag" id="effrate">20.7% effective rate</span></td><td id="net2">€39,667</td></tr>
+      <table class="brk" aria-label="Joint assessment breakdown">
+        <tr><td>Combined gross</td><td id="combined">€85,000</td></tr>
+        <tr><td>Income tax <span class="tag">PAYE, joint</span></td><td id="it">– €9,400</td></tr>
+        <tr><td>USC <span class="tag">both</span></td><td id="usc">– €1,616</td></tr>
+        <tr><td>PRSI <span class="tag">both</span></td><td id="prsi">– €3,570</td></tr>
+        <tr class="tot"><td>Combined take-home</td><td id="net2">€70,414</td></tr>
       </table>
+      <div class="savebox">
+        <div class="k">Joint assessment saves you</div>
+        <div class="v" id="saveBig">€1,800</div>
+        <div class="sub" id="saveSub">a year vs being taxed as two single people</div>
+      </div>
       <div class="btns">
         <button class="btn btn-primary" id="pdf">⬇ Save as PDF report</button>
         <button class="btn btn-ghost" id="reset">Reset</button>
@@ -259,18 +236,20 @@ footer{padding:28px 0 50px;color:var(--muted);font-size:.86rem;text-align:center
     </div>
   </div>
 
-  <!-- GEO DIRECT ANSWER (dynamic, near top of text) -->
-  <p class="answer no-print" id="answerLine">A <b>€50,000</b> single salary in Ireland gives about <b>€39,667</b> take-home per year (<b>€3,306</b>/month) after income tax (€7,200), USC (€1,033) and PRSI (€2,100) in 2026.</p>
+  <!-- GEO DIRECT ANSWER -->
+  <p class="answer no-print" id="answerLine">A jointly assessed couple earning <b>€55,000</b> and <b>€30,000</b> keeps about <b>€70,414</b> a year combined (<b>€5,868</b>/month) after income tax, USC and PRSI — roughly <b>€1,800</b> more than if they were taxed separately.</p>
 
-  <!-- SECURITY & PRIVACY (the #1 priority, fully explained) -->
+  <p class="no-print" style="max-width:70ch;margin:24px 0 0;font-size:1.02rem">When you get married in Ireland, nothing changes automatically — you have to actually opt into joint assessment with Revenue (most couples do, because it's usually the better deal). The benefit is simple: if one of you earns a lot more than the other, the higher earner can borrow part of the lower earner's tax band, so less of your combined income gets hit by the 40% rate. Put both incomes in above to see your real combined take-home and exactly what joint assessment is worth to you.</p>
+
+  <!-- SECURITY & PRIVACY -->
   <section class="prose no-print">
     <div class="seccard">
       <h2>Your data, locked down</h2>
-      <p style="color:var(--muted);margin-top:0">Salary is sensitive. This tool is engineered so your numbers physically cannot leave this page:</p>
+      <p style="color:var(--muted);margin-top:0">Your household income is sensitive. This tool is engineered so your numbers physically cannot leave this page:</p>
       <ul class="seclist">
-        <li><b>Calculated in your browser.</b> The tax maths runs in JavaScript on your device — nothing is sent to a server to be computed.</li>
-        <li><b>No network connection allowed.</b> A Content-Security-Policy (<code>connect-src 'none'</code>) blocks the page from making any outbound request, so your salary can't be transmitted even by accident.</li>
-        <li><b>Nothing stored.</b> No cookies, no local storage of your figures, no account. Refresh the page and it's gone.</li>
+        <li><b>Calculated in your browser.</b> The tax maths runs in JavaScript on your device — nothing is sent to a server.</li>
+        <li><b>No network connection allowed.</b> A Content-Security-Policy (<code>connect-src 'none'</code>) blocks the page from making any outbound request.</li>
+        <li><b>Nothing stored.</b> No cookies, no local storage of your figures, no account. Refresh and it's gone.</li>
         <li><b>No tracking, no ads watching your inputs.</b> Served over HTTPS with strict security headers.</li>
       </ul>
     </div>
@@ -278,47 +257,41 @@ footer{padding:28px 0 50px;color:var(--muted);font-size:.86rem;text-align:center
 
   <!-- METHODOLOGY / EEAT -->
   <section class="prose no-print">
-    <h2>How this net salary calculator works (2026)</h2>
-    <p>Ireland uses a progressive system. Three deductions come off your gross salary: <b>income tax (PAYE)</b>, the <b>Universal Social Charge (USC)</b> and <b>PRSI</b>. Here are the 2026 figures this calculator uses, confirmed in Budget 2026.</p>
+    <h2>How joint assessment works in Ireland (2026)</h2>
+    <p>A married couple or civil partners can be taxed three ways: jointly assessed, separately assessed, or as single people. <b>Joint assessment</b> is usually the most favourable, because the couple shares one standard rate band and combines their tax credits. Only <b>income tax</b> is shared — USC and PRSI are always worked out on each person's own income.</p>
 
-    <h3>Income tax (PAYE)</h3>
+    <h3>The shared standard rate band</h3>
     <table class="bands">
-      <tr><th>Status</th><th>20% band</th><th>40%</th></tr>
-      <tr><td>Single / widowed</td><td>First €44,000</td><td>Balance</td></tr>
-      <tr><td>Married, one income</td><td>First €53,000</td><td>Balance</td></tr>
+      <tr><th>Situation</th><th>20% band (2026)</th></tr>
+      <tr><td>One income</td><td>€53,000</td></tr>
+      <tr><td>Two incomes</td><td>€53,000 + the lower of €35,000 or the lower earner's income (max €88,000)</td></tr>
     </table>
-    <p>Tax credits are then subtracted: a <b>€2,000</b> Personal Tax Credit plus the <b>€2,000</b> Employee (PAYE) Tax Credit for a single employee. Budget 2026 left bands and credits unchanged from 2025.</p>
+    <p>The €35,000 increase is <b>not transferable</b> — only the spouse who earned it can use it. Anything above the band is taxed at 40%. The couple's tax credits are a €4,000 Personal Tax Credit plus a €2,000 Employee (PAYE) Tax Credit for each spouse who has PAYE income.</p>
 
-    <h3>Universal Social Charge (USC)</h3>
-    <table class="bands">
-      <tr><th>Band</th><th>Rate</th></tr>
-      <tr><td>Up to €12,012</td><td>0.5%</td></tr>
-      <tr><td>€12,012 – €28,700</td><td>2%</td></tr>
-      <tr><td>€28,700 – €70,044</td><td>3%</td></tr>
-      <tr><td>Balance</td><td>8%</td></tr>
-    </table>
-    <p>Budget 2026 widened the 2% band ceiling to €28,700. Total income at or below €13,000 is exempt from USC. USC is charged on gross income and is not reduced by tax credits or pension contributions.</p>
+    <h3>Why it usually saves money</h3>
+    <p>If both partners earn above the band, joint assessment makes little difference. But when incomes are uneven — say €55,000 and €30,000 — the higher earner can use part of the lower earner's band at 20% instead of 40%, saving around €1,800 a year in that example. A one-income couple benefits the most (about €3,800), because the full €53,000 band shelters a single salary.</p>
 
-    <h3>PRSI</h3>
-    <p>Class A employee PRSI is <b>4.2%</b> of gross pay for most of 2026, rising to <b>4.35%</b> from 1 October 2026. This tool uses 4.2% as the headline rate; weekly earnings of €352 or less are exempt.</p>
-
-    <p style="color:var(--muted);font-size:.92rem">Note: this is an estimate for a standard PAYE employee. It doesn't model every relief (e.g. medical-card USC reduction, BIK, additional credits, or two-income couple band capping). Pension % is applied to the income-tax base only.</p>
+    <p style="color:var(--muted);font-size:.92rem">Estimate for two standard PAYE employees, no pension contributions. It doesn't model self-employment, the Home Carer Tax Credit, or proportionate allocation of the band on your payslips. Confirm your own position with Revenue.</p>
   </section>
 
   <!-- FAQ / AEO (mirrors JSON-LD) -->
   <section class="prose no-print">
     <h2>People also ask</h2>
     <details open>
-      <summary>How much is take-home pay on €50,000 in Ireland in 2026?</summary>
-      <p>A single PAYE worker on €50,000 keeps roughly €39,667 a year (about €3,306/month) after income tax (€7,200), USC (€1,033) and PRSI (€2,100). Pension contributions or extra credits change this.</p>
+      <summary>Is joint assessment better in Ireland?</summary>
+      <p>Usually yes, especially when the two incomes differ. A couple on €55,000 and €30,000 keeps about €1,800 a year more than if taxed separately. Two equal higher earners often see no difference.</p>
     </details>
     <details>
-      <summary>What is the standard rate cut-off point for 2026?</summary>
-      <p>€44,000 for a single person — income up to €44,000 is taxed at 20%, the rest at 40%. It's €53,000 for a married couple with one income.</p>
+      <summary>How does the married tax band work in 2026?</summary>
+      <p>€53,000 at 20%, increased by the lower of €35,000 or the lower earner's income — up to €88,000. The €35,000 increase can't be transferred between spouses.</p>
     </details>
     <details>
-      <summary>Is my salary data safe in this calculator?</summary>
-      <p>Yes. All calculation happens in your browser, and a Content-Security-Policy blocks the page from sending any data out. Your salary is never transmitted, stored or shared.</p>
+      <summary>Do USC and PRSI change under joint assessment?</summary>
+      <p>No. Only income tax is jointly assessed. USC and PRSI are always calculated on each person's own income.</p>
+    </details>
+    <details>
+      <summary>Do married couples pay less tax in Ireland?</summary>
+      <p>They can — by sharing the €53,000 band and combining credits (€4,000 personal + €2,000 per earner). The benefit shrinks to nothing when both already earn above the band.</p>
     </details>
   </section>
 
@@ -326,47 +299,38 @@ footer{padding:28px 0 50px;color:var(--muted);font-size:.86rem;text-align:center
   <section class="prose no-print">
     <h2>Related Ireland calculators</h2>
     <div class="related">
-      <a href="/ireland/day-rate-to-salary-calculator/">Day rate to salary calculator <span>For contractors</span></a>
-      <a href="/ireland/annual-salary-to-hourly-calculator/">Hourly to annual calculator <span>From an hourly rate</span></a>
-      <a href="/ireland/annual-salary-to-hourly-calculator/">Salary to hourly calculator <span>Find your hourly rate</span></a>
-      <a href="/ireland/pro-rata-salary-calculator/">Pro rata salary calculator <span>For part-time hours</span></a>
-      <a href="/ireland/overtime-pay-calculator/">Overtime pay calculator <span>1.5× and 2× rates</span></a>
+      <a href="/ireland/salary-after-tax/">Salary after tax calculator <span>Single or one-income take-home</span></a>
+      <a href="/ireland/income-tax-calculator/">Income tax calculator <span>PAYE at 20% and 40%</span></a>
+      <a href="/ireland/rent-tax-credit-calculator/">Rent tax credit calculator <span>€2,000 jointly assessed</span></a>
+      <a href="/ireland/pension-tax-relief-calculator/">Pension tax relief calculator <span>Lower your tax bill</span></a>
       <a href="/ireland/">All Ireland calculators <span>Browse the hub</span></a>
     </div>
 
-    <!-- EEAT author + freshness -->
     <div class="meta-author">
       <div class="av">NP</div>
       <div>
         <b>Reviewed by the NetPayHub editorial team</b><br>
-        <small>Figures sourced from Revenue.ie and Budget 2026. Last updated: 29 May 2026.</small>
+        <small>Joint-assessment bands and credits sourced from Revenue.ie. Last updated: 8 June 2026.</small>
       </div>
     </div>
 
-    <p class="source">Sources: <a href="https://www.revenue.ie" rel="nofollow">revenue.ie</a>, Budget 2026 (gov.ie). This calculator gives estimates for planning only and is not tax advice. Verify your exact position with Revenue or a qualified adviser.</p>
+    <p class="source">Sources: <a href="https://www.revenue.ie/en/life-events-and-personal-circumstances/marital-status/marriage-and-civil-partnerships/joint-assessment.aspx" rel="nofollow">Revenue.ie — Joint assessment</a>, Budget 2026 (gov.ie). Estimates for planning only — not tax advice. Verify your exact position with Revenue.</p>
   </section>
 
   <footer class="no-print">
     <nav aria-label="Footer" class="foot-cols">
       <div>
         <b>Calculators</b>
-        <a href="/ireland/joint-assessment-tax-calculator/">Joint assessment calculator</a>
         <a href="/ireland/software-engineer-take-home-pay-calculator/">Software engineer take-home</a>
-        <a href="/ireland/emergency-tax-calculator/">Emergency tax calculator</a>
-        <a href="/ireland/minimum-wage-calculator/">Minimum wage calculator</a>
-        <a href="/ireland/rent-tax-credit-calculator/">Rent tax credit calculator</a>
-        <a href="/ireland/net-to-gross-calculator/">Net to gross calculator</a>
-        <a href="/ireland/teacher-take-home-pay-calculator/">Teacher take-home pay</a>
         <a href="/ireland/salary-after-tax/">Net salary calculator</a>
         <a href="/ireland/income-tax-calculator/">Income tax calculator</a>
         <a href="/ireland/usc-calculator/">USC calculator</a>
         <a href="/ireland/prsi-calculator/">PRSI calculator</a>
-        <a href="/ireland/day-rate-to-salary-calculator/">Day rate to salary</a>
-        <a href="/ireland/annual-salary-to-hourly-calculator/">Hourly to annual</a>
-        <a href="/ireland/annual-salary-to-hourly-calculator/">Salary to hourly</a>
-        <a href="/ireland/pro-rata-salary-calculator/">Pro rata salary</a>
-        <a href="/ireland/overtime-pay-calculator/">Overtime pay</a>
-        <a href="/ireland/bonus-tax-calculator/">Bonus tax</a>
+        <a href="/ireland/joint-assessment-tax-calculator/">Joint assessment calculator</a>
+        <a href="/ireland/emergency-tax-calculator/">Emergency tax calculator</a>
+        <a href="/ireland/minimum-wage-calculator/">Minimum wage calculator</a>
+        <a href="/ireland/rent-tax-credit-calculator/">Rent tax credit calculator</a>
+        <a href="/ireland/net-to-gross-calculator/">Net to gross calculator</a>
       </div>
       <div>
         <b>Self-employed &amp; compare</b>
@@ -399,10 +363,10 @@ footer{padding:28px 0 50px;color:var(--muted);font-size:.86rem;text-align:center
     © <span id="yr"></span> NetPayHub · Estimates only — not financial advice.
   </footer>
 
-  <!-- HIDDEN PRINT REPORT (filled by JS before printing; no external libs) -->
   <div class="report" id="report"></div>
 </main>
 
+<script src="/assets/tax2026.js" defer></script>
 <script src="app.js" defer></script>
 </body>
 </html>
