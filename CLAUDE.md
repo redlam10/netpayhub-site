@@ -148,5 +148,7 @@ When in doubt, match the patterns already present in the existing files.
   - `/ireland/auto-enrolment-calculator/` → "auto enrolment calculator Ireland"  (NOTE: "PAYE calculator Ireland" is a SECONDARY keyword of /ireland/income-tax-calculator/ — do NOT build a separate PAYE page)
   - `/ireland/second-job-tax-calculator/` → "second job tax calculator Ireland"
   - `/ireland/cost-of-employee-calculator/` → "cost of an employee calculator Ireland"
+  - `/ireland/garda-take-home-pay-calculator/` → "garda take home pay calculator Ireland"
+  - `/ireland/maternity-benefit-calculator/` → "maternity benefit calculator Ireland"
   - about, methodology, editorial-policy, privacy, terms, disclaimer: optimize titles/meta/
     headings only; keep indexable but low sitemap priority — NOT keyword targets.
