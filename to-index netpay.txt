@@ -1,0 +1,54 @@
+# NetPayHub - Pages a indexer (GSC) - classees par PRIORITE
+# Du plus important au moins important. 2 pages par jour.
+# Logique: pages argent (gros trafic) d'abord, pages legales en dernier.
+
+# === JOUR 1 - pages argent principales ===
+https://netpayhub.com/ireland/salary-after-tax/
+https://netpayhub.com/ireland/income-tax-calculator/
+
+# === JOUR 2 - core + tendance 2026 ===
+https://netpayhub.com/ireland/usc-calculator/
+https://netpayhub.com/ireland/auto-enrolment-calculator/
+
+# === JOUR 3 - forte demande ===
+https://netpayhub.com/ireland/emergency-tax-calculator/
+https://netpayhub.com/ireland/net-to-gross-calculator/
+
+# === JOUR 4 - forte demande + metier ===
+https://netpayhub.com/ireland/minimum-wage-calculator/
+https://netpayhub.com/ireland/nurse-take-home-pay-calculator/
+
+# === JOUR 5 - metiers ===
+https://netpayhub.com/ireland/teacher-take-home-pay-calculator/
+https://netpayhub.com/ireland/garda-take-home-pay-calculator/
+
+# === JOUR 6 - hubs strategiques (pillar) ===
+https://netpayhub.com/ireland/take-home-pay-by-profession/
+https://netpayhub.com/ireland/contractors/
+
+# === JOUR 7 - hub + pension ===
+https://netpayhub.com/ireland/freelancers/
+https://netpayhub.com/ireland/pension-tax-relief-calculator/
+
+# === JOUR 8 - calculateurs forts ===
+https://netpayhub.com/ireland/second-job-tax-calculator/
+https://netpayhub.com/ireland/bonus-tax-calculator/
+
+# === JOUR 9 ===
+https://netpayhub.com/ireland/pro-rata-salary-calculator/
+https://netpayhub.com/ireland/rent-tax-credit-calculator/
+
+# === JOUR 10 ===
+https://netpayhub.com/ireland/maternity-benefit-calculator/
+https://netpayhub.com/ireland/contract-vs-permanent-calculator/
+
+# === JOUR 11 - freelance ===
+https://netpayhub.com/ireland/freelance-tax-calculator-2026/
+https://netpayhub.com/ireland/freelance-hourly-rate-calculator/
+
+# === JOUR 12 - pages info/legales (priorite basse) ===
+https://netpayhub.com/methodology/
+https://netpayhub.com/about/
+
+# === JOUR 13 ===
+https://netpayhub.com/how-we-protect-your-data/
