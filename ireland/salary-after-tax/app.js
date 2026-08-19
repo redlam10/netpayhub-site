@@ -10,6 +10,16 @@ const CREDITS={single:4000, married1:6000};   // personal + employee PAYE credit
 const USC_EXEMPT=13000, PRSI_RATE=0.042, PRSI_WEEKLY_EXEMPT=352*52;
 
 function band(amount, lower, upper, rate){ return Math.max(0, Math.min(amount,upper)-lower)*rate; }
+// Class A employee PRSI. Nil at or below EUR352/week; between EUR352.01 and EUR424 a
+// tapered weekly credit of up to EUR12 applies, reduced by one sixth of weekly
+// earnings above EUR352.01 (gov.ie "PRSI Class A Rates", note **).
+function prsiEmployee(gross, rate){
+  if(gross<=PRSI_WEEKLY_EXEMPT) return 0;
+  const w=gross/52;
+  const credit = w<=352.01 ? 12 : (w>=424 ? 0 : Math.max(0, 12-(w-352.01)/6));
+  return Math.max(0, w*(rate||PRSI_RATE)-credit)*52;
+}
+
 
 function compute(){
   const gross=Math.max(0,parseFloat($('gross').value)||0);
@@ -33,7 +43,7 @@ function compute(){
   }
 
   // PRSI
-  const prsi = gross<=PRSI_WEEKLY_EXEMPT ? 0 : gross*PRSI_RATE;
+  const prsi = prsiEmployee(gross);
 
   const totalDed=incomeTax+usc+prsi;
   const net=Math.max(0,gross-totalDed);

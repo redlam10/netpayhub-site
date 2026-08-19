@@ -13,6 +13,9 @@ window.NPH_2026 = (function () {
   const USC_EXEMPT = 13000;
   const PRSI_RATE = 0.042;                                      // 4.2% (4.35% from 1 Oct 2026)
   const PRSI_WEEKLY_EXEMPT = 352 * 52;                          // employee PRSI threshold
+  const PRSI_CREDIT_MAX  = 12;                                  // max tapered weekly PRSI credit
+  const PRSI_CREDIT_FROM = 352.01;                              // full credit at this weekly wage
+  const PRSI_CREDIT_TO   = 424;                                 // credit gone above this
   const SELF_PRSI_MIN = 650;                                    // Class S minimum €650/yr
 
   function band(a, lo, hi, r) { return Math.max(0, Math.min(a, hi) - lo) * r; }
@@ -33,7 +36,21 @@ window.NPH_2026 = (function () {
     if (selfEmployed && income > 100000) u += (income - 100000) * 0.03;
     return u;
   }
-  function prsiEmployee(gross) { return gross <= PRSI_WEEKLY_EXEMPT ? 0 : gross * PRSI_RATE; }
+  // Class A employee PRSI. Nil at or below EUR352/week. Between EUR352.01 and EUR424 a
+  // tapered weekly credit of up to EUR12 applies, reduced by one sixth of weekly
+  // earnings above EUR352.01 (gov.ie "PRSI Class A Rates", note **; worked example on
+  // citizensinformation.ie). Without it a EUR20,000 salary is overcharged by EUR341/yr.
+  function prsiCredit(weekly) {
+    if (weekly <= PRSI_CREDIT_FROM) return PRSI_CREDIT_MAX;
+    if (weekly >= PRSI_CREDIT_TO)   return 0;
+    return Math.max(0, PRSI_CREDIT_MAX - (weekly - PRSI_CREDIT_FROM) / 6);
+  }
+  function prsiEmployee(gross, rate) {
+    if (gross <= PRSI_WEEKLY_EXEMPT) return 0;
+    const weekly = gross / 52;
+    const charge = weekly * (rate || PRSI_RATE) - prsiCredit(weekly);
+    return Math.max(0, charge) * 52;
+  }
   function prsiClassS(income) { return income <= 0 ? 0 : Math.max(SELF_PRSI_MIN, income * PRSI_RATE); }
 
   // Employee (PAYE). Pension % reduces the income-tax base only; the contribution
@@ -60,5 +77,5 @@ window.NPH_2026 = (function () {
   }
 
   return { CUTOFF, PERSONAL, band, incomeTaxGross, credits, usc,
-           prsiEmployee, prsiClassS, employeeNet, selfEmployedNet, PRSI_RATE };
+           prsiCredit, prsiEmployee, prsiClassS, employeeNet, selfEmployedNet, PRSI_RATE };
 })();

@@ -23,6 +23,20 @@ const PERIOD_NOUN={weekly:'week', fortnightly:'fortnight', monthly:'month'};
 
 function band(a,lo,hi,r){return Math.max(0,Math.min(a,hi)-lo)*r;}
 
+// Class A employee PRSI. Nil at or below EUR352/week; between EUR352.01 and EUR424 a
+// tapered weekly credit of up to EUR12 applies, reduced by one sixth of weekly
+// earnings above EUR352.01 (gov.ie "PRSI Class A Rates", note **).
+function prsiCredit(weekly){
+  if(weekly<=352.01) return 12;
+  if(weekly>=424) return 0;
+  return Math.max(0, 12-(weekly-352.01)/6);
+}
+function prsiWeekly(weekly){
+  if(weekly<=352) return 0;
+  return Math.max(0, weekly*0.042 - prsiCredit(weekly));
+}
+
+
 // Normal annual deductions for a single PAYE worker (for the refund comparison)
 function normalAnnual(annualGross){
   const it=Math.max(0, (Math.min(annualGross,ANNUAL_BAND)*0.20 + Math.max(0,annualGross-ANNUAL_BAND)*0.40) - SINGLE_CREDITS);
@@ -31,7 +45,7 @@ function normalAnnual(annualGross){
     usc=band(annualGross,0,12012,0.005)+band(annualGross,12012,28700,0.02)
        +band(annualGross,28700,70044,0.03)+band(annualGross,70044,Infinity,0.08);
   }
-  const prsi=annualGross<=352*52?0:annualGross*0.042;
+  const prsi=prsiWeekly(annualGross/52)*52;
   return it+usc+prsi;
 }
 
@@ -49,7 +63,7 @@ function compute(){
   const ppy=PERIODS[freq];
   const bandPerPeriod=ANNUAL_BAND/ppy;
   const weeklyEquiv=g*ppy/52;
-  const prsi=weeklyEquiv<=352?0:g*0.042;
+  const prsi=prsiWeekly(weeklyEquiv)*52/ppy;
   const usc=g*0.08;                        // emergency USC flat 8%
 
   // current (latest) period = period number `periods`

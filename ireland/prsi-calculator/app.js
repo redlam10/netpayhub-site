@@ -6,8 +6,11 @@ const WEEKLY_EXEMPT=352*52; // €352/week threshold
 function compute(){
   const inc=Math.max(0,parseFloat($('income').value)||0);
   const rate=parseFloat($('rate').value)||0.042;
-  const prsi=inc<=WEEKLY_EXEMPT?0:inc*rate;
-  return {inc,rate,prsi,weekly:prsi/52,exempt:inc<=WEEKLY_EXEMPT};
+  const prsi=window.NPH_2026 ? NPH_2026.prsiEmployee(inc,rate)
+                             : (inc<=WEEKLY_EXEMPT?0:inc*rate);
+  const wk=inc/52;
+  const tapered = inc>WEEKLY_EXEMPT && wk<424;   // tapered EUR12/week credit still applies
+  return {inc,rate,prsi,weekly:prsi/52,exempt:inc<=WEEKLY_EXEMPT,tapered};
 }
 function render(){
   const r=compute();
@@ -20,7 +23,10 @@ function render(){
   if(r.exempt){
     $('answerLine').innerHTML=`On <b>${fmt.format(r.inc)}</b>, you pay <b>no PRSI</b> — earnings of €352 a week or less are exempt in 2026.`;
   } else {
-    $('answerLine').innerHTML=`On <b>${fmt.format(r.inc)}</b>, Class A PRSI is <b>${fmt.format(r.prsi)}</b> for 2026 (${(r.rate*100).toFixed(2).replace(/\.?0+$/,'')}% of gross pay) — about ${fmt.format(r.weekly)} a week.`;
+    const basis = r.tapered
+      ? `${(r.rate*100).toFixed(2).replace(/\.?0+$/,'')}% of gross pay less the tapered PRSI credit`
+      : `${(r.rate*100).toFixed(2).replace(/\.?0+$/,'')}% of gross pay`;
+    $('answerLine').innerHTML=`On <b>${fmt.format(r.inc)}</b>, Class A PRSI is <b>${fmt.format(r.prsi)}</b> for 2026 (${basis}) — about ${fmt.format(r.weekly)} a week.`;
   }
   return r;
 }
