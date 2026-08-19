@@ -57,6 +57,7 @@ function render(){
   $('it').textContent=fmt.format(r.incomeTax);
   $('usc').textContent=fmt.format(r.usc);
   $('prsi').textContent=fmt.format(r.prsi);
+  { const t=$('prsiTag'); if(t) t.textContent = (r.gross>352*52 && r.gross/52<424) ? '4.2% less credit' : '4.2%'; }
   $('net2').textContent=fmt.format(r.net);
   $('effrate').textContent=(r.eff*100).toFixed(1)+'% effective rate';
   const label = r.status==='single' ? 'single' : 'married (one income)';
